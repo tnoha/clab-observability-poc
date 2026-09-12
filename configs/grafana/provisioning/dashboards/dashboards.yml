@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: observability
+    folder: Network PoC
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

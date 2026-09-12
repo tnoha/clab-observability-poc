@@ -1,0 +1,119 @@
+name: obs
+mgmt:
+  network: obs-mgmt
+  ipv4-subnet: 172.31.100.0/24
+  ipv6-subnet: ''
+topology:
+  nodes:
+    core1:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.11
+      startup-config: ../runtime/ceos/core1.cfg
+    core2:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.12
+      startup-config: ../runtime/ceos/core2.cfg
+    edge1:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.13
+      startup-config: ../runtime/ceos/edge1.cfg
+    edge2:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.14
+      startup-config: ../runtime/ceos/edge2.cfg
+    external1:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.15
+      startup-config: ../runtime/ceos/external1.cfg
+    external2:
+      kind: arista_ceos
+      image: ceos:4.34.0F
+      mgmt-ipv4: 172.31.100.16
+      startup-config: ../runtime/ceos/external2.cfg
+    floci:
+      kind: linux
+      image: floci/floci:2.0.1
+      mgmt-ipv4: 172.31.100.20
+      ports:
+      - 127.0.0.1:4566:4566
+      binds:
+      - /var/run/docker.sock:/var/run/docker.sock
+      env:
+        FLOCI_SERVICES_ECS_MOCK: 'false'
+        FLOCI_SERVICES_ECS_DOCKER_NETWORK: obs-mgmt
+        FLOCI_DOCKER_RESOURCE_NAMESPACE: obs
+    opensearch:
+      kind: linux
+      image: opensearchproject/opensearch:2.19.3
+      mgmt-ipv4: 172.31.100.21
+      ports:
+      - 127.0.0.1:9200:9200
+      env:
+        discovery.type: single-node
+        DISABLE_SECURITY_PLUGIN: 'true'
+        DISABLE_INSTALL_DEMO_CONFIG: 'true'
+        OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
+        node.store.allow_mmap: 'false'
+      binds:
+      - ../runtime/opensearch:/usr/share/opensearch/data
+    prometheus:
+      kind: linux
+      image: prom/prometheus:v3.5.0
+      mgmt-ipv4: 172.31.100.22
+      ports:
+      - 127.0.0.1:9090:9090
+      cmd: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus
+        --storage.tsdb.retention.time=7d
+      binds:
+      - ../configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ../runtime/discovery:/etc/prometheus/discovery:ro
+      - ../runtime/prometheus:/prometheus
+    grafana:
+      kind: linux
+      image: clab-observability-grafana:0.1.0
+      mgmt-ipv4: 172.31.100.23
+      ports:
+      - 127.0.0.1:3000:3000
+      env:
+        GF_SECURITY_ADMIN_USER: ${LAB_USERNAME}
+        GF_SECURITY_ADMIN_PASSWORD: ${LAB_PASSWORD}
+      binds:
+      - ../configs/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../configs/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - ../runtime/grafana:/var/lib/grafana
+    discovery:
+      kind: linux
+      image: clab-observability-collector:0.1.0
+      mgmt-ipv4: 172.31.100.24
+      cmd: discovery
+      binds:
+      - ../runtime/discovery:/discovery
+      env:
+        AWS_ENDPOINT_URL: http://172.31.100.20:4566
+  links:
+  - endpoints:
+    - core1:eth1
+    - core2:eth1
+  - endpoints:
+    - core1:eth2
+    - edge1:eth1
+  - endpoints:
+    - core2:eth2
+    - edge1:eth2
+  - endpoints:
+    - core1:eth3
+    - edge2:eth1
+  - endpoints:
+    - core2:eth3
+    - edge2:eth2
+  - endpoints:
+    - edge1:eth3
+    - external1:eth1
+  - endpoints:
+    - edge2:eth3
+    - external2:eth1

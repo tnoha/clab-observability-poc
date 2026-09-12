@@ -1,0 +1,9 @@
+platform: eos
+software_version: 4.34.0F
+commands:
+  bgp: show ip bgp summary | json
+  interfaces: show interfaces | json
+subscriptions:
+  - /interfaces/interface/state
+  - /network-instances/network-instance/protocols/protocol/bgp/neighbors/neighbor/state
+sample_interval_seconds: 10

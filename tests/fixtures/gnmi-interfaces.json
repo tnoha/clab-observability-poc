@@ -1,0 +1,156 @@
+{
+  "notification": [
+    {
+      "timestamp": 1789202139467289355,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state",
+          "val": {
+            "openconfig-interfaces:admin-status": "UP",
+            "openconfig-interfaces:counters": {
+              "carrier-transitions": "2",
+              "in-broadcast-pkts": "0",
+              "in-discards": "0",
+              "in-errors": "0",
+              "in-fcs-errors": "0",
+              "in-multicast-pkts": "17",
+              "in-octets": "4050",
+              "in-pkts": "38",
+              "in-unicast-pkts": "21",
+              "out-broadcast-pkts": "0",
+              "out-discards": "0",
+              "out-errors": "0",
+              "out-multicast-pkts": "0",
+              "out-octets": "0",
+              "out-pkts": "0",
+              "out-unicast-pkts": "0"
+            },
+            "openconfig-interfaces:description": "TO-core1",
+            "openconfig-platform-port:hardware-port": "Ethernet1-Port",
+            "openconfig-interfaces:ifindex": 1,
+            "arista-intf-augments:inactive": false,
+            "openconfig-interfaces:last-change": "1789202092486240863",
+            "openconfig-interfaces:management": false,
+            "openconfig-interfaces:mtu": 0,
+            "openconfig-interfaces:name": "Ethernet1",
+            "openconfig-interfaces:oper-status": "UP",
+            "openconfig-platform-transceiver:transceiver": "Ethernet1",
+            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+          }
+        },
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state",
+          "val": {
+            "openconfig-interfaces:admin-status": "UP",
+            "openconfig-interfaces:counters": {
+              "carrier-transitions": "2",
+              "in-broadcast-pkts": "3",
+              "in-discards": "0",
+              "in-errors": "0",
+              "in-fcs-errors": "0",
+              "in-multicast-pkts": "22",
+              "in-octets": "3958",
+              "in-pkts": "35",
+              "in-unicast-pkts": "10",
+              "out-broadcast-pkts": "0",
+              "out-discards": "0",
+              "out-errors": "0",
+              "out-multicast-pkts": "0",
+              "out-octets": "0",
+              "out-pkts": "0",
+              "out-unicast-pkts": "0"
+            },
+            "openconfig-interfaces:description": "TO-core2",
+            "openconfig-platform-port:hardware-port": "Ethernet2-Port",
+            "openconfig-interfaces:ifindex": 2,
+            "arista-intf-augments:inactive": false,
+            "openconfig-interfaces:last-change": "1789202092491406440",
+            "openconfig-interfaces:management": false,
+            "openconfig-interfaces:mtu": 0,
+            "openconfig-interfaces:name": "Ethernet2",
+            "openconfig-interfaces:oper-status": "UP",
+            "openconfig-platform-transceiver:transceiver": "Ethernet2",
+            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+          }
+        },
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state",
+          "val": {
+            "openconfig-interfaces:admin-status": "UP",
+            "openconfig-interfaces:counters": {
+              "carrier-transitions": "2",
+              "in-broadcast-pkts": "4",
+              "in-discards": "0",
+              "in-errors": "0",
+              "in-fcs-errors": "0",
+              "in-multicast-pkts": "4",
+              "in-octets": "1981",
+              "in-pkts": "17",
+              "in-unicast-pkts": "9",
+              "out-broadcast-pkts": "0",
+              "out-discards": "0",
+              "out-errors": "0",
+              "out-multicast-pkts": "0",
+              "out-octets": "0",
+              "out-pkts": "0",
+              "out-unicast-pkts": "0"
+            },
+            "openconfig-interfaces:description": "TO-external1",
+            "openconfig-platform-port:hardware-port": "Ethernet3-Port",
+            "openconfig-interfaces:ifindex": 3,
+            "arista-intf-augments:inactive": false,
+            "openconfig-interfaces:last-change": "1789202092485910177",
+            "openconfig-interfaces:management": false,
+            "openconfig-interfaces:mtu": 0,
+            "openconfig-interfaces:name": "Ethernet3",
+            "openconfig-interfaces:oper-status": "UP",
+            "openconfig-platform-transceiver:transceiver": "Ethernet3",
+            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+          }
+        },
+        {
+          "path": "interfaces/interface[name=Loopback0]/state",
+          "val": {
+            "openconfig-interfaces:ifindex": 5000000,
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback0"
+          }
+        },
+        {
+          "path": "interfaces/interface[name=Management0]/state",
+          "val": {
+            "openconfig-interfaces:admin-status": "UP",
+            "openconfig-interfaces:counters": {
+              "carrier-transitions": "3",
+              "in-broadcast-pkts": "0",
+              "in-discards": "3",
+              "in-errors": "0",
+              "in-fcs-errors": "0",
+              "in-multicast-pkts": "0",
+              "in-octets": "67986",
+              "in-pkts": "251",
+              "in-unicast-pkts": "251",
+              "out-broadcast-pkts": "0",
+              "out-discards": "0",
+              "out-errors": "0",
+              "out-multicast-pkts": "0",
+              "out-octets": "1205",
+              "out-pkts": "15",
+              "out-unicast-pkts": "15"
+            },
+            "arista-intf-augments:inactive": false,
+            "openconfig-interfaces:last-change": "1789202092847641706",
+            "openconfig-interfaces:management": true,
+            "openconfig-interfaces:mtu": 0,
+            "openconfig-interfaces:name": "Management0",
+            "openconfig-interfaces:oper-status": "UP",
+            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+          }
+        }
+      ]
+    }
+  ]
+}

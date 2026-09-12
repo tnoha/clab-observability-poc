@@ -1,0 +1,63 @@
+{
+  "vrfs": {
+    "default": {
+      "vrf": "default",
+      "routerId": "10.255.0.3",
+      "asn": "65000",
+      "peers": {
+        "10.0.0.11": {
+          "version": 4,
+          "msgReceived": 5,
+          "msgSent": 5,
+          "inMsgQueue": 0,
+          "outMsgQueue": 0,
+          "asn": "65101",
+          "prefixAccepted": 1,
+          "prefixReceived": 1,
+          "upDownTime": 1789202097.417378,
+          "underMaintenance": false,
+          "peerState": "Established"
+        },
+        "10.255.0.1": {
+          "version": 4,
+          "msgReceived": 4,
+          "msgSent": 5,
+          "inMsgQueue": 0,
+          "outMsgQueue": 0,
+          "asn": "65000",
+          "prefixAccepted": 0,
+          "prefixReceived": 0,
+          "upDownTime": 1789202108.672519,
+          "underMaintenance": false,
+          "peerState": "Established"
+        },
+        "10.255.0.2": {
+          "version": 4,
+          "msgReceived": 4,
+          "msgSent": 5,
+          "inMsgQueue": 0,
+          "outMsgQueue": 0,
+          "asn": "65000",
+          "prefixAccepted": 0,
+          "prefixReceived": 0,
+          "upDownTime": 1789202108.641968,
+          "underMaintenance": false,
+          "peerState": "Established"
+        },
+        "10.255.0.4": {
+          "version": 4,
+          "msgReceived": 5,
+          "msgSent": 5,
+          "inMsgQueue": 0,
+          "outMsgQueue": 0,
+          "asn": "65000",
+          "prefixAccepted": 1,
+          "prefixReceived": 1,
+          "upDownTime": 1789202108.673724,
+          "underMaintenance": false,
+          "peerState": "Established"
+        }
+      }
+    }
+  }
+}

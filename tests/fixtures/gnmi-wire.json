@@ -1,0 +1,5427 @@
+[
+  {
+    "update": {
+      "timestamp": "1789203095935717827",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "carrier-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203097245547585",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "5"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096243596069",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet1"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-fcs-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203265109158519",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "45"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203266612911051",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet1"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "8438"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "82"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "32"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095738298858",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet1"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "admin-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "description"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "TO-core1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927309404",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "hardware-port"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet1-Port"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095905775373",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "ifindex"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935717827",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet1"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "inactive"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-change"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203090076046466"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "management"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "mtu"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936230119",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "name"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935717827",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "oper-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927309404",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "transceiver"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935717827",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "iana-if-type:ethernetCsmacd"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203256590347119",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "17"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935463707",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "carrier-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203098755098268",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "5"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096243596069",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet2"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-fcs-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203268115456094",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet2"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "40"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "6965"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "62"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095685420778",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet2"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "admin-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "description"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "TO-core2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927353144",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "hardware-port"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet2-Port"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095905775373",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "ifindex"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935463707",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet2"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "inactive"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-change"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203090076276540"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "management"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "mtu"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936230119",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "name"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935463707",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "oper-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927353144",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "transceiver"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095935463707",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "iana-if-type:ethernetCsmacd"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203248575223425",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "8"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203255588336313",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet3"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "3574"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "29"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "17"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936223369",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "carrier-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203099758135606",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "in-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "4"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096243596069",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet3"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-fcs-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095738389098",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet3"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "admin-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "description"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "TO-external1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927390084",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "hardware-port"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet3-Port"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095553452055",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "ifindex"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936223369",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet3"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "inactive"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-change"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203090076498031"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "management"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "mtu"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936230119",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "name"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936223369",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "oper-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095927390084",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "transceiver"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Ethernet3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936223369",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Ethernet3"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "iana-if-type:ethernetCsmacd"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095741522037",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Loopback0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "ifindex"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "5000000"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095741587477",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Loopback0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "loopback-mode"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "FACILITY"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095741522037",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Loopback0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "name"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Loopback0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936507920",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Management0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "counters"
+              },
+              {
+                "name": "carrier-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096423674389",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Management0"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-fcs-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203269631981138",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Management0"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "99478"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "677"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "677"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "658856"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "419"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "419"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095738485219",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Management0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "admin-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936507920",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Management0"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "inactive"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": false
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-change"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203085544857978"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "management"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": true
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "mtu"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936230119",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "interfaces"
+              },
+              {
+                "name": "interface",
+                "key": {
+                  "name": "Management0"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "name"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "Management0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095936507920",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Management0"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "oper-status"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "UP"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "iana-if-type:ethernetCsmacd"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963346276",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.0.0.11"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "established-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-established"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203094083840608"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "last-prefix-limit-exceeded"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.0.0.11"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203113695522087",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.0.0.11"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.0.0.11"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "neighbor-address"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "10.0.0.11"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963346276",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.0.0.11"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "neighbor-port"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "41141"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-as"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "65101"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "EXTERNAL"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.0.0.11"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "input"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "output"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963346276",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.0.0.11"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "session-state"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "ESTABLISHED"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "supported-capabilities"
+              }
+            ]
+          },
+          "val": {
+            "leaflistVal": {
+              "element": [
+                {
+                  "stringVal": "openconfig-bgp-types:ROUTE_REFRESH"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ASN32"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:GRACEFUL_RESTART"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ADD_PATHS"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:MPBGP"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203105689042115",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "established-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203105688966715",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-established"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203105686545848"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963456396",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-prefix-limit-exceeded"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203111640339328",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203112692750318",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "neighbor-address"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "10.255.0.1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095917437426",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "next-hop-self"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963456396",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.1"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-as"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "65000"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "INTERNAL"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.1"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "input"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "output"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203105689042115",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "session-state"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "ESTABLISHED"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203105689038695",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.1"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "supported-capabilities"
+              }
+            ]
+          },
+          "val": {
+            "leaflistVal": {
+              "element": [
+                {
+                  "stringVal": "openconfig-bgp-types:MPBGP"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ROUTE_REFRESH"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ASN32"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:GRACEFUL_RESTART"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ADD_PATHS"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203107650191756",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "established-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203107650162346",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-established"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203107649379491"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963087235",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-prefix-limit-exceeded"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203110883071764",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203112692750318",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "neighbor-address"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "10.255.0.2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203107648509331",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "neighbor-port"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "41709"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095919774172",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "next-hop-self"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963087235",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.2"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-as"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "65000"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "INTERNAL"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.2"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "input"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "output"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203107650191756",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "session-state"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "ESTABLISHED"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203107648506271",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.2"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "supported-capabilities"
+              }
+            ]
+          },
+          "val": {
+            "leaflistVal": {
+              "element": [
+                {
+                  "stringVal": "openconfig-bgp-types:MPBGP"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ROUTE_REFRESH"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ASN32"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:GRACEFUL_RESTART"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ADD_PATHS"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203110689412985",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "established-transitions"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203110689350355",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-established"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "1789203110688323259"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963195875",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "last-prefix-limit-exceeded"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203112690880213",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "received"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "NOTIFICATION"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203112692750318",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "messages"
+              },
+              {
+                "name": "sent"
+              },
+              {
+                "name": "UPDATE"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "2"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "neighbor-address"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "10.255.0.4"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095921480527",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "next-hop-self"
+              }
+            ]
+          },
+          "val": {
+            "boolVal": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203095963195875",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.4"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-as"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "65000"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "peer-type"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "INTERNAL"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203096089028552",
+      "prefix": {
+        "elem": [
+          {
+            "name": "network-instances"
+          },
+          {
+            "name": "network-instance",
+            "key": {
+              "name": "default"
+            }
+          },
+          {
+            "name": "protocols"
+          },
+          {
+            "name": "protocol",
+            "key": {
+              "identifier": "BGP",
+              "name": "BGP"
+            }
+          },
+          {
+            "name": "bgp"
+          },
+          {
+            "name": "neighbors"
+          },
+          {
+            "name": "neighbor",
+            "key": {
+              "neighbor-address": "10.255.0.4"
+            }
+          },
+          {
+            "name": "state"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "input"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "queues"
+              },
+              {
+                "name": "output"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203110689412985",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "session-state"
+              }
+            ]
+          },
+          "val": {
+            "stringVal": "ESTABLISHED"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "update": {
+      "timestamp": "1789203110689408955",
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "network-instances"
+              },
+              {
+                "name": "network-instance",
+                "key": {
+                  "name": "default"
+                }
+              },
+              {
+                "name": "protocols"
+              },
+              {
+                "name": "protocol",
+                "key": {
+                  "identifier": "BGP",
+                  "name": "BGP"
+                }
+              },
+              {
+                "name": "bgp"
+              },
+              {
+                "name": "neighbors"
+              },
+              {
+                "name": "neighbor",
+                "key": {
+                  "neighbor-address": "10.255.0.4"
+                }
+              },
+              {
+                "name": "state"
+              },
+              {
+                "name": "supported-capabilities"
+              }
+            ]
+          },
+          "val": {
+            "leaflistVal": {
+              "element": [
+                {
+                  "stringVal": "openconfig-bgp-types:MPBGP"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ROUTE_REFRESH"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ASN32"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:GRACEFUL_RESTART"
+                },
+                {
+                  "stringVal": "openconfig-bgp-types:ADD_PATHS"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "syncResponse": true
+  },
+  {
+    "update": {
+      "timestamp": "1789203096243596069",
+      "prefix": {
+        "elem": [
+          {
+            "name": "interfaces"
+          },
+          {
+            "name": "interface",
+            "key": {
+              "name": "Ethernet1"
+            }
+          },
+          {
+            "name": "state"
+          },
+          {
+            "name": "counters"
+          }
+        ]
+      },
+      "update": [
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "in-fcs-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-broadcast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-discards"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-errors"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-multicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-octets"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        },
+        {
+          "path": {
+            "elem": [
+              {
+                "name": "out-unicast-pkts"
+              }
+            ]
+          },
+          "val": {
+            "uintVal": "0"
+          }
+        }
+      ]
+    }
+  }
+]

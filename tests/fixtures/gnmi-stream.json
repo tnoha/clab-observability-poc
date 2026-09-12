@@ -1,0 +1,1630 @@
+[
+  {
+    "update": {
+      "timestamp": 1789203095935717827,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/counters/carrier-transitions",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203097245547585,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/counters/in-broadcast-pkts",
+          "val": 5
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096243596069,
+      "prefix": "interfaces/interface[name=Ethernet1]/state/counters",
+      "update": [
+        {
+          "path": "in-discards",
+          "val": 0
+        },
+        {
+          "path": "in-errors",
+          "val": 0
+        },
+        {
+          "path": "in-fcs-errors",
+          "val": 0
+        },
+        {
+          "path": "out-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-discards",
+          "val": 0
+        },
+        {
+          "path": "out-errors",
+          "val": 0
+        },
+        {
+          "path": "out-multicast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-octets",
+          "val": 0
+        },
+        {
+          "path": "out-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-unicast-pkts",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203265109158519,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/counters/in-multicast-pkts",
+          "val": 45
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203266612911051,
+      "prefix": "interfaces/interface[name=Ethernet1]/state/counters",
+      "update": [
+        {
+          "path": "in-octets",
+          "val": 8438
+        },
+        {
+          "path": "in-pkts",
+          "val": 82
+        },
+        {
+          "path": "in-unicast-pkts",
+          "val": 32
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095738298858,
+      "prefix": "interfaces/interface[name=Ethernet1]/state",
+      "update": [
+        {
+          "path": "admin-status",
+          "val": "UP"
+        },
+        {
+          "path": "description",
+          "val": "TO-core1"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927309404,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/hardware-port",
+          "val": "Ethernet1-Port"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095905775373,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/ifindex",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935717827,
+      "prefix": "interfaces/interface[name=Ethernet1]/state",
+      "update": [
+        {
+          "path": "inactive",
+          "val": false
+        },
+        {
+          "path": "last-change",
+          "val": 1789203090076046466
+        },
+        {
+          "path": "management",
+          "val": false
+        },
+        {
+          "path": "mtu",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936230119,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/name",
+          "val": "Ethernet1"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935717827,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/oper-status",
+          "val": "UP"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927309404,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/transceiver",
+          "val": "Ethernet1"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935717827,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet1]/state/type",
+          "val": "iana-if-type:ethernetCsmacd"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203256590347119,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/counters/in-unicast-pkts",
+          "val": 17
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935463707,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/counters/carrier-transitions",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203098755098268,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/counters/in-broadcast-pkts",
+          "val": 5
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096243596069,
+      "prefix": "interfaces/interface[name=Ethernet2]/state/counters",
+      "update": [
+        {
+          "path": "in-discards",
+          "val": 0
+        },
+        {
+          "path": "in-errors",
+          "val": 0
+        },
+        {
+          "path": "in-fcs-errors",
+          "val": 0
+        },
+        {
+          "path": "out-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-discards",
+          "val": 0
+        },
+        {
+          "path": "out-errors",
+          "val": 0
+        },
+        {
+          "path": "out-multicast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-octets",
+          "val": 0
+        },
+        {
+          "path": "out-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-unicast-pkts",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203268115456094,
+      "prefix": "interfaces/interface[name=Ethernet2]/state/counters",
+      "update": [
+        {
+          "path": "in-multicast-pkts",
+          "val": 40
+        },
+        {
+          "path": "in-octets",
+          "val": 6965
+        },
+        {
+          "path": "in-pkts",
+          "val": 62
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095685420778,
+      "prefix": "interfaces/interface[name=Ethernet2]/state",
+      "update": [
+        {
+          "path": "admin-status",
+          "val": "UP"
+        },
+        {
+          "path": "description",
+          "val": "TO-core2"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927353144,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/hardware-port",
+          "val": "Ethernet2-Port"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095905775373,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/ifindex",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935463707,
+      "prefix": "interfaces/interface[name=Ethernet2]/state",
+      "update": [
+        {
+          "path": "inactive",
+          "val": false
+        },
+        {
+          "path": "last-change",
+          "val": 1789203090076276540
+        },
+        {
+          "path": "management",
+          "val": false
+        },
+        {
+          "path": "mtu",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936230119,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/name",
+          "val": "Ethernet2"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935463707,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/oper-status",
+          "val": "UP"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927353144,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/transceiver",
+          "val": "Ethernet2"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095935463707,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet2]/state/type",
+          "val": "iana-if-type:ethernetCsmacd"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203248575223425,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/counters/in-multicast-pkts",
+          "val": 8
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203255588336313,
+      "prefix": "interfaces/interface[name=Ethernet3]/state/counters",
+      "update": [
+        {
+          "path": "in-octets",
+          "val": 3574
+        },
+        {
+          "path": "in-pkts",
+          "val": 29
+        },
+        {
+          "path": "in-unicast-pkts",
+          "val": 17
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936223369,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/counters/carrier-transitions",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203099758135606,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/counters/in-broadcast-pkts",
+          "val": 4
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096243596069,
+      "prefix": "interfaces/interface[name=Ethernet3]/state/counters",
+      "update": [
+        {
+          "path": "in-discards",
+          "val": 0
+        },
+        {
+          "path": "in-errors",
+          "val": 0
+        },
+        {
+          "path": "in-fcs-errors",
+          "val": 0
+        },
+        {
+          "path": "out-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-discards",
+          "val": 0
+        },
+        {
+          "path": "out-errors",
+          "val": 0
+        },
+        {
+          "path": "out-multicast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-octets",
+          "val": 0
+        },
+        {
+          "path": "out-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-unicast-pkts",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095738389098,
+      "prefix": "interfaces/interface[name=Ethernet3]/state",
+      "update": [
+        {
+          "path": "admin-status",
+          "val": "UP"
+        },
+        {
+          "path": "description",
+          "val": "TO-external1"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927390084,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/hardware-port",
+          "val": "Ethernet3-Port"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095553452055,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/ifindex",
+          "val": 3
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936223369,
+      "prefix": "interfaces/interface[name=Ethernet3]/state",
+      "update": [
+        {
+          "path": "inactive",
+          "val": false
+        },
+        {
+          "path": "last-change",
+          "val": 1789203090076498031
+        },
+        {
+          "path": "management",
+          "val": false
+        },
+        {
+          "path": "mtu",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936230119,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/name",
+          "val": "Ethernet3"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936223369,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/oper-status",
+          "val": "UP"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095927390084,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/transceiver",
+          "val": "Ethernet3"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936223369,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Ethernet3]/state/type",
+          "val": "iana-if-type:ethernetCsmacd"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095741522037,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback0]/state/ifindex",
+          "val": 5000000
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095741587477,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback0]/state/loopback-mode",
+          "val": "FACILITY"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095741522037,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback0]/state/name",
+          "val": "Loopback0"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936507920,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Management0]/state/counters/carrier-transitions",
+          "val": 3
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096423674389,
+      "prefix": "interfaces/interface[name=Management0]/state/counters",
+      "update": [
+        {
+          "path": "in-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "in-discards",
+          "val": 0
+        },
+        {
+          "path": "in-errors",
+          "val": 0
+        },
+        {
+          "path": "in-fcs-errors",
+          "val": 0
+        },
+        {
+          "path": "in-multicast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-discards",
+          "val": 0
+        },
+        {
+          "path": "out-errors",
+          "val": 0
+        },
+        {
+          "path": "out-multicast-pkts",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203269631981138,
+      "prefix": "interfaces/interface[name=Management0]/state/counters",
+      "update": [
+        {
+          "path": "in-octets",
+          "val": 99478
+        },
+        {
+          "path": "in-pkts",
+          "val": 677
+        },
+        {
+          "path": "in-unicast-pkts",
+          "val": 677
+        },
+        {
+          "path": "out-octets",
+          "val": 658856
+        },
+        {
+          "path": "out-pkts",
+          "val": 419
+        },
+        {
+          "path": "out-unicast-pkts",
+          "val": 419
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095738485219,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Management0]/state/admin-status",
+          "val": "UP"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936507920,
+      "prefix": "interfaces/interface[name=Management0]/state",
+      "update": [
+        {
+          "path": "inactive",
+          "val": false
+        },
+        {
+          "path": "last-change",
+          "val": 1789203085544857978
+        },
+        {
+          "path": "management",
+          "val": true
+        },
+        {
+          "path": "mtu",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936230119,
+      "prefix": null,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Management0]/state/name",
+          "val": "Management0"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095936507920,
+      "prefix": "interfaces/interface[name=Management0]/state",
+      "update": [
+        {
+          "path": "oper-status",
+          "val": "UP"
+        },
+        {
+          "path": "type",
+          "val": "iana-if-type:ethernetCsmacd"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963346276,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+      "update": [
+        {
+          "path": "established-transitions",
+          "val": 1
+        },
+        {
+          "path": "last-established",
+          "val": 1789203094083840608
+        },
+        {
+          "path": "last-prefix-limit-exceeded",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+      "update": [
+        {
+          "path": "messages/received/NOTIFICATION",
+          "val": 0
+        },
+        {
+          "path": "messages/received/UPDATE",
+          "val": 2
+        },
+        {
+          "path": "messages/sent/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203113695522087,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state/messages/sent/UPDATE",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state/neighbor-address",
+          "val": "10.0.0.11"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963346276,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+      "update": [
+        {
+          "path": "neighbor-port",
+          "val": 41141
+        },
+        {
+          "path": "peer-as",
+          "val": 65101
+        },
+        {
+          "path": "peer-type",
+          "val": "EXTERNAL"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+      "update": [
+        {
+          "path": "queues/input",
+          "val": 0
+        },
+        {
+          "path": "queues/output",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963346276,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+      "update": [
+        {
+          "path": "session-state",
+          "val": "ESTABLISHED"
+        },
+        {
+          "path": "supported-capabilities",
+          "val": [
+            "openconfig-bgp-types:ROUTE_REFRESH",
+            "openconfig-bgp-types:ASN32",
+            "openconfig-bgp-types:GRACEFUL_RESTART",
+            "openconfig-bgp-types:ADD_PATHS",
+            "openconfig-bgp-types:MPBGP"
+          ]
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203105689042115,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/established-transitions",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203105688966715,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/last-established",
+          "val": 1789203105686545848
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963456396,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/last-prefix-limit-exceeded",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/messages/received/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203111640339328,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/messages/received/UPDATE",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/messages/sent/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203112692750318,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/messages/sent/UPDATE",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/neighbor-address",
+          "val": "10.255.0.1"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095917437426,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/next-hop-self",
+          "val": true
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963456396,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state",
+      "update": [
+        {
+          "path": "peer-as",
+          "val": 65000
+        },
+        {
+          "path": "peer-type",
+          "val": "INTERNAL"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state",
+      "update": [
+        {
+          "path": "queues/input",
+          "val": 0
+        },
+        {
+          "path": "queues/output",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203105689042115,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/session-state",
+          "val": "ESTABLISHED"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203105689038695,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state/supported-capabilities",
+          "val": [
+            "openconfig-bgp-types:MPBGP",
+            "openconfig-bgp-types:ROUTE_REFRESH",
+            "openconfig-bgp-types:ASN32",
+            "openconfig-bgp-types:GRACEFUL_RESTART",
+            "openconfig-bgp-types:ADD_PATHS"
+          ]
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203107650191756,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/established-transitions",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203107650162346,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/last-established",
+          "val": 1789203107649379491
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963087235,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/last-prefix-limit-exceeded",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/messages/received/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203110883071764,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/messages/received/UPDATE",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/messages/sent/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203112692750318,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/messages/sent/UPDATE",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/neighbor-address",
+          "val": "10.255.0.2"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203107648509331,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/neighbor-port",
+          "val": 41709
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095919774172,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/next-hop-self",
+          "val": true
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963087235,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state",
+      "update": [
+        {
+          "path": "peer-as",
+          "val": 65000
+        },
+        {
+          "path": "peer-type",
+          "val": "INTERNAL"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state",
+      "update": [
+        {
+          "path": "queues/input",
+          "val": 0
+        },
+        {
+          "path": "queues/output",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203107650191756,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/session-state",
+          "val": "ESTABLISHED"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203107648506271,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state/supported-capabilities",
+          "val": [
+            "openconfig-bgp-types:MPBGP",
+            "openconfig-bgp-types:ROUTE_REFRESH",
+            "openconfig-bgp-types:ASN32",
+            "openconfig-bgp-types:GRACEFUL_RESTART",
+            "openconfig-bgp-types:ADD_PATHS"
+          ]
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203110689412985,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/established-transitions",
+          "val": 1
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203110689350355,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/last-established",
+          "val": 1789203110688323259
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963195875,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/last-prefix-limit-exceeded",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/messages/received/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203112690880213,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/messages/received/UPDATE",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/messages/sent/NOTIFICATION",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203112692750318,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/messages/sent/UPDATE",
+          "val": 2
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/neighbor-address",
+          "val": "10.255.0.4"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095921480527,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/next-hop-self",
+          "val": true
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203095963195875,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state",
+      "update": [
+        {
+          "path": "peer-as",
+          "val": 65000
+        },
+        {
+          "path": "peer-type",
+          "val": "INTERNAL"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203096089028552,
+      "prefix": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state",
+      "update": [
+        {
+          "path": "queues/input",
+          "val": 0
+        },
+        {
+          "path": "queues/output",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203110689412985,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/session-state",
+          "val": "ESTABLISHED"
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "update": {
+      "timestamp": 1789203110689408955,
+      "prefix": null,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state/supported-capabilities",
+          "val": [
+            "openconfig-bgp-types:MPBGP",
+            "openconfig-bgp-types:ROUTE_REFRESH",
+            "openconfig-bgp-types:ASN32",
+            "openconfig-bgp-types:GRACEFUL_RESTART",
+            "openconfig-bgp-types:ADD_PATHS"
+          ]
+        }
+      ],
+      "delete": []
+    }
+  },
+  {
+    "sync_response": true
+  },
+  {
+    "update": {
+      "timestamp": 1789203096243596069,
+      "prefix": "interfaces/interface[name=Ethernet1]/state/counters",
+      "update": [
+        {
+          "path": "in-discards",
+          "val": 0
+        },
+        {
+          "path": "in-errors",
+          "val": 0
+        },
+        {
+          "path": "in-fcs-errors",
+          "val": 0
+        },
+        {
+          "path": "out-broadcast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-discards",
+          "val": 0
+        },
+        {
+          "path": "out-errors",
+          "val": 0
+        },
+        {
+          "path": "out-multicast-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-octets",
+          "val": 0
+        },
+        {
+          "path": "out-pkts",
+          "val": 0
+        },
+        {
+          "path": "out-unicast-pkts",
+          "val": 0
+        }
+      ],
+      "delete": []
+    }
+  }
+]

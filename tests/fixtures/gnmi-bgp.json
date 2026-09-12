@@ -1,0 +1,148 @@
+{
+  "notification": [
+    {
+      "timestamp": 1789202139468394188,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.0.0.11]/state",
+          "val": {
+            "openconfig-network-instance:established-transitions": "1",
+            "openconfig-network-instance:last-established": "1789202097417376756",
+            "openconfig-network-instance:last-prefix-limit-exceeded": "0",
+            "openconfig-network-instance:messages": {
+              "received": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              },
+              "sent": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              }
+            },
+            "openconfig-network-instance:neighbor-address": "10.0.0.11",
+            "openconfig-network-instance:peer-as": 65101,
+            "openconfig-network-instance:peer-type": "EXTERNAL",
+            "openconfig-network-instance:queues": {
+              "input": 0,
+              "output": 0
+            },
+            "openconfig-network-instance:session-state": "ESTABLISHED",
+            "openconfig-network-instance:supported-capabilities": [
+              "openconfig-bgp-types:MPBGP",
+              "openconfig-bgp-types:ROUTE_REFRESH",
+              "openconfig-bgp-types:ASN32",
+              "openconfig-bgp-types:GRACEFUL_RESTART",
+              "openconfig-bgp-types:ADD_PATHS"
+            ]
+          }
+        },
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.1]/state",
+          "val": {
+            "openconfig-network-instance:established-transitions": "1",
+            "openconfig-network-instance:last-established": "1789202108672518491",
+            "openconfig-network-instance:last-prefix-limit-exceeded": "0",
+            "openconfig-network-instance:messages": {
+              "received": {
+                "NOTIFICATION": "0",
+                "UPDATE": "1"
+              },
+              "sent": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              }
+            },
+            "openconfig-network-instance:neighbor-address": "10.255.0.1",
+            "arista-exp-eos-bgp:next-hop-self": true,
+            "openconfig-network-instance:peer-as": 65000,
+            "openconfig-network-instance:peer-type": "INTERNAL",
+            "openconfig-network-instance:queues": {
+              "input": 0,
+              "output": 0
+            },
+            "openconfig-network-instance:session-state": "ESTABLISHED",
+            "openconfig-network-instance:supported-capabilities": [
+              "openconfig-bgp-types:ROUTE_REFRESH",
+              "openconfig-bgp-types:ASN32",
+              "openconfig-bgp-types:GRACEFUL_RESTART",
+              "openconfig-bgp-types:ADD_PATHS",
+              "openconfig-bgp-types:MPBGP"
+            ]
+          }
+        },
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.2]/state",
+          "val": {
+            "openconfig-network-instance:established-transitions": "1",
+            "openconfig-network-instance:last-established": "1789202108641967535",
+            "openconfig-network-instance:last-prefix-limit-exceeded": "0",
+            "openconfig-network-instance:messages": {
+              "received": {
+                "NOTIFICATION": "0",
+                "UPDATE": "1"
+              },
+              "sent": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              }
+            },
+            "openconfig-network-instance:neighbor-address": "10.255.0.2",
+            "openconfig-network-instance:neighbor-port": 36847,
+            "arista-exp-eos-bgp:next-hop-self": true,
+            "openconfig-network-instance:peer-as": 65000,
+            "openconfig-network-instance:peer-type": "INTERNAL",
+            "openconfig-network-instance:queues": {
+              "input": 0,
+              "output": 0
+            },
+            "openconfig-network-instance:session-state": "ESTABLISHED",
+            "openconfig-network-instance:supported-capabilities": [
+              "openconfig-bgp-types:ASN32",
+              "openconfig-bgp-types:GRACEFUL_RESTART",
+              "openconfig-bgp-types:ADD_PATHS",
+              "openconfig-bgp-types:MPBGP",
+              "openconfig-bgp-types:ROUTE_REFRESH"
+            ]
+          }
+        },
+        {
+          "path": "network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.255.0.4]/state",
+          "val": {
+            "openconfig-network-instance:established-transitions": "1",
+            "openconfig-network-instance:last-established": "1789202108673724174",
+            "openconfig-network-instance:last-prefix-limit-exceeded": "0",
+            "openconfig-network-instance:messages": {
+              "received": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              },
+              "sent": {
+                "NOTIFICATION": "0",
+                "UPDATE": "2"
+              }
+            },
+            "openconfig-network-instance:neighbor-address": "10.255.0.4",
+            "arista-exp-eos-bgp:next-hop-self": true,
+            "openconfig-network-instance:peer-as": 65000,
+            "openconfig-network-instance:peer-type": "INTERNAL",
+            "openconfig-network-instance:queues": {
+              "input": 0,
+              "output": 0
+            },
+            "openconfig-network-instance:session-state": "ESTABLISHED",
+            "openconfig-network-instance:supported-capabilities": [
+              "openconfig-bgp-types:MPBGP",
+              "openconfig-bgp-types:ROUTE_REFRESH",
+              "openconfig-bgp-types:ASN32",
+              "openconfig-bgp-types:GRACEFUL_RESTART",
+              "openconfig-bgp-types:ADD_PATHS"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
