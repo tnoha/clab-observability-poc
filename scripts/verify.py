@@ -166,8 +166,9 @@ def verify():
         "title": "observations-*",
         "timeFieldName": "collected_at",
     }, r.text
-    r = requests.get("http://127.0.0.1:3000/api/dashboards/uid/network-poc", auth=auth, timeout=10)
-    r.raise_for_status()
+    for uid in ("network-poc", "network-device"):
+        r = requests.get(f"http://127.0.0.1:3000/api/dashboards/uid/{uid}", auth=auth, timeout=10)
+        r.raise_for_status()
     from check_dashboard import check_dashboard
 
     check_dashboard()

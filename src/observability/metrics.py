@@ -11,18 +11,20 @@ class Metrics:
         self.lock = threading.Lock()
         self.devices = {name: {} for name in names}
         self.last = {name: 0 for name in names}
+        self.synchronized = {name: False for name in names}
         self.errors = {}
         self.dropped = 0
 
     def disconnected(self, device):
         with self.lock:
             self.devices[device] = {}
-            self.last[device] = 0
+            self.synchronized[device] = False
 
     def update(self, device, observations):
         with self.lock:
             received = time.time()
             self.last[device] = received
+            self.synchronized[device] = True
             for observation in observations:
                 if observation.deleted:
                     self.devices[device].pop(observation.entity_key, None)
@@ -67,7 +69,7 @@ class Metrics:
         with self.lock:
             current = time.time()
             for device, entities in self.devices.items():
-                fresh = self.last[device] > current - 35
+                fresh = self.synchronized[device] and self.last[device] > current - 35
                 connected.add_metric([device], int(fresh))
                 if self.last[device]:
                     last.add_metric([device], self.last[device])

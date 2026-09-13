@@ -12,6 +12,7 @@ from observability.repository import Repository
 from observability.ecs import task_ips, write_discovery
 
 FIXTURES = Path(__file__).parent / "fixtures"
+ROOT = Path(__file__).parents[1]
 DEVICE = inventory()[2]
 
 
@@ -106,13 +107,52 @@ def test_disconnect_and_silence_remove_series():
     registry = CollectorRegistry()
     registry.register(metrics)
     metrics.update(DEVICE.name, populated().snapshot())
-    assert b"network_bgp_session_up{" in generate_latest(registry)
+    initial = generate_latest(registry)
+    assert b"network_bgp_session_up{" in initial
+    last_observed = next(
+        line
+        for line in initial.splitlines()
+        if line.startswith(b'collector_last_observed_timestamp_seconds{device="edge1"}')
+    )
     with patch("observability.metrics.time.time", return_value=time.time() + 40):
         output = generate_latest(registry)
         assert b"network_bgp_session_up{" not in output
         assert b'collector_connected{device="edge1"} 0.0' in output
     metrics.disconnected(DEVICE.name)
-    assert b"network_bgp_session_up{" not in generate_latest(registry)
+    output = generate_latest(registry)
+    assert b"network_bgp_session_up{" not in output
+    assert b'collector_connected{device="edge1"} 0.0' in output
+    assert last_observed in output
+
+
+def test_device_dashboard_is_filtered_and_repeats_entities():
+    dashboard = json.loads((ROOT / "configs/grafana/dashboards/device.json").read_text())
+    assert dashboard["uid"] == "network-device"
+    variables = {item["name"]: item for item in dashboard["templating"]["list"]}
+    assert set(variables) == {"device", "interface"}
+    assert variables["device"]["current"]["value"] == "core1"
+    assert not variables["device"]["multi"] and not variables["device"]["includeAll"]
+    assert variables["interface"]["multi"] and variables["interface"]["includeAll"]
+    assert 'interface=~"Ethernet.*"' in variables["interface"]["query"]["query"]
+
+    panels = {panel["id"]: panel for panel in dashboard["panels"]}
+    assert panels[4]["type"] == "row" and panels[4]["title"] == "BGP neighbors"
+    assert panels[5]["type"] == "stat" and 'device="$device"' in panels[5]["targets"][0]["expr"]
+    assert "min by (peer)" in panels[5]["targets"][0]["expr"]
+    assert panels[5]["options"]["textMode"] == "value_and_name"
+    assert panels[5]["options"]["text"] == {"titleSize": 14, "valueSize": 18}
+    assert panels[5]["gridPos"] == {"x": 0, "y": 7, "w": 6, "h": 10}
+    assert panels[6]["type"] == "state-timeline"
+    assert "min by (peer)" in panels[6]["targets"][0]["expr"]
+    assert panels[6]["gridPos"] == {"x": 6, "y": 7, "w": 18, "h": 10}
+    assert panels[11]["repeat"] == "interface" and panels[11]["maxPerRow"] == 2
+    assert [target["legendFormat"] for target in panels[11]["targets"]] == ["RX", "TX"]
+    assert all('device="$device"' in target["expr"] for target in panels[11]["targets"])
+    assert all('interface=~"$interface"' in target["expr"] for target in panels[11]["targets"])
+    for panel_id in (8, 9):
+        query = panels[panel_id]["targets"][0]["query"]
+        assert "`device.name` = '$device'" in query
+        assert query.index("where") < query.index("sort") < query.index("dedup")
 
 
 def test_one_failed_device_does_not_cancel_others():

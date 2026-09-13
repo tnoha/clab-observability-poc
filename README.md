@@ -55,6 +55,7 @@ make verify
 `make build`が`.env`にランダムなラボ用パスワードを生成します。Grafana/SSH/gNMIの認証情報はこのファイルの`LAB_USERNAME`/`LAB_PASSWORD`です。`.env`、startup-config、観測データはGit管理対象外です。
 
 - Grafana: [ISP Network Observability](http://localhost:3000/d/network-poc)
+- Grafana: [ISP Device Observability](http://localhost:3000/d/network-device)（機器を選択して詳細表示）
 - OpenSearch Dashboards: [Discover / Dev Tools](http://localhost:5601)
 - Prometheus: [Prometheus UI](http://localhost:9090)
 - OpenSearch: localhost:9200
@@ -75,7 +76,7 @@ OpenSearch Dashboardsには`observations-*`（time fieldは`collected_at`）のi
 - 両経路は同じSchemaを使用し、`source.transport`で区別。gNMIの部分更新・削除を統合し、逆順タイムスタンプを無視。未取得値を0やdownに補完しない。
 - OpenSearchは`observations-YYYY.MM.DD`に履歴保存。gNMIの状態変化は即時、全状態のスナップショットは10秒ごとに保存し、leaf単位の通知集中による書き込み過多を避けます。Bulk失敗は最大3回試行。同じバッチ再送は同じ文書IDを使用。
 - gNMIの保存キューは最大120バッチ。保存失敗/キュー満杯は`collector_errors_total`と`collector_dropped_observations_total`に記録。永続的な再送キューではない。
-- 切断・未同期時のネットワークメトリクスは除去。GrafanaのOpenSearch一覧は履歴なので、`collected_at`とCollector接続状態を併せて確認。
+- 切断・未同期時のネットワークメトリクスは除去。最終観測時刻は保持されるため、Grafanaでは切断中も経過秒数が増加する。OpenSearch一覧は履歴なので、`collected_at`とCollector接続状態を併せて確認。
 - Prometheusは7日保持。OpenSearch履歴は明示的なcleanまで保持するため、長時間稼働時はディスク容量を確認。
 
 Schemaの詳細と実測上の制約は[設計メモ](docs/design.md)を参照してください。
