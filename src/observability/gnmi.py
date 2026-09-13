@@ -16,6 +16,9 @@ IF = re.compile(r"^interfaces/interface\[name=([^\]]+)\]/state(?:/(.*))?$")
 BGP = re.compile(
     r"^network-instances/network-instance\[name=([^\]]+)\]/protocols/protocol\[[^/]+/bgp/neighbors/neighbor\[neighbor-address=([^\]]+)\]/state(?:/(.*))?$"
 )
+BGP_PREFIXES_RECEIVED = re.compile(
+    r"^network-instances/network-instance\[name=([^\]]+)\]/protocols/protocol\[[^/]+/bgp/neighbors/neighbor\[neighbor-address=([^\]]+)\]/afi-safis/afi-safi\[afi-safi-name=([^\]]+)\]/state/prefixes/received$"
+)
 
 
 def clean_path(path):
@@ -38,7 +41,17 @@ def identity(path):
     match = BGP.match(path)
     if match:
         return ("bgp_neighbor", match[1], match[2]), match[3] or ""
+    match = BGP_PREFIXES_RECEIVED.match(path)
+    if match and match[3].split(":")[-1] == "IPV4_UNICAST":
+        return ("bgp_neighbor", match[1], match[2]), "prefixes-received"
     return None, None
+
+
+def entity_path(key, path):
+    if key[0] == "interface":
+        return path.split("/state")[0] + "/state"
+    neighbor = path.split("/afi-safis/")[0].split("/state")[0]
+    return neighbor + "/state"
 
 
 class StateCache:
@@ -48,6 +61,7 @@ class StateCache:
         self.paths = {}
         self.timestamps = {}
         self.leaf_timestamps = {}
+        self.leaf_paths = {}
         self.tombstones = {}
 
     def apply(self, notification):
@@ -63,7 +77,7 @@ class StateCache:
             base = path.split("/state")[0] + "/state"
             accepted = False
             for name, value in flatten(update["val"], leaf):
-                full_path = base + "/" + name
+                full_path = path if leaf == "prefixes-received" else base + "/" + name
                 if any(
                     (full_path == dead or full_path.startswith(dead + "/")) and timestamp <= at
                     for dead, at in self.tombstones.items()
@@ -74,9 +88,10 @@ class StateCache:
                     continue
                 self.values.setdefault(key, {})[name] = value
                 times[name] = timestamp
+                self.leaf_paths.setdefault(key, {})[name] = full_path
                 accepted = True
             if accepted:
-                self.paths[key] = base
+                self.paths[key] = entity_path(key, path)
                 self.timestamps[key] = max(self.leaf_timestamps[key].values())
                 touched.add(key)
         for deleted_path in notification.get("delete", []):
@@ -87,19 +102,26 @@ class StateCache:
                 previous = self.make(key)
                 removed = False
                 for leaf in list(self.values[key]):
-                    full_path = base + "/" + leaf
+                    full_path = self.leaf_paths[key][leaf]
                     if (full_path == path or full_path.startswith(path + "/")) and self.leaf_timestamps[key][
                         leaf
                     ] <= timestamp:
                         del self.values[key][leaf]
                         del self.leaf_timestamps[key][leaf]
+                        del self.leaf_paths[key][leaf]
                         removed = True
                 if removed:
                     if not self.values[key]:
                         previous.deleted = True
                         previous.observed_at = timestamp
                         deleted.append(previous)
-                        del self.values[key], self.paths[key], self.timestamps[key], self.leaf_timestamps[key]
+                        del (
+                            self.values[key],
+                            self.paths[key],
+                            self.timestamps[key],
+                            self.leaf_timestamps[key],
+                            self.leaf_paths[key],
+                        )
                         touched.discard(key)
                     else:
                         self.timestamps[key] = max(timestamp, self.timestamps[key])
@@ -140,6 +162,7 @@ class StateCache:
                 remote_as=values.get("peer-as"),
                 local_as=values.get("local-as"),
                 session_state=(values.get("session-state") or "").lower() or None,
+                prefixes_received=values.get("prefixes-received"),
             )
         return observation(
             self.device, "gnmi", data, self.timestamps[key], path=self.paths[key], timestamp_origin="device"
@@ -206,7 +229,7 @@ def state_signature(obs):
     data = obs.data
     if isinstance(data, Interface):
         return obs.deleted, data.admin_state, data.oper_state
-    return obs.deleted, data.session_state, data.remote_as
+    return obs.deleted, data.session_state, data.remote_as, data.prefixes_received
 
 
 def worker(device, metrics, sink, stop):

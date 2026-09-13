@@ -27,3 +27,7 @@ CLIの接続不能試験はホストから同じCollectorモジュールを実�
 実装中に発見して修正した点は、pyGNMIのEOS初期通知処理、フィールドごとの時刻順序、leaf通知集中時の保存負荷、Floci TaskのDNS名、Task置換後のPrometheus準備完了判定、Grafana PPLのスクリプト生成上限です。版固有の制約は[設計メモ](design.md)を参照してください。
 
 再実行は`make verify`、`make fault-test`、`make test`を使用します。機械可読の実行結果はGit対象外の`runtime/evidence/`に保存されます。上記の秒数はこのホストでの実測で、別環境で同一の遅延を保証するものではありません。
+
+## Received prefix追加検証
+
+2026-09-13、同じ互換構成でCollectorとGrafanaを再構築し、`make verify`を実行しました。IPv4-unicastのreceived prefix数は全16 BGP peerでgNMI Gaugeとして公開され、直前に実行したCLI収集の`prefixReceived`と一致しました。6台のstream同期、16セッション、14 Ethernet、両Grafanaデータソース、Deviceを含む両ダッシュボードのOpenSearchクエリも成功しました。`make test`は21件、Ruffのlintとformatチェックも成功しています。
