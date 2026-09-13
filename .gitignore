@@ -6,4 +6,6 @@ __pycache__/
 .ruff_cache/
 runtime/
 clab-*/
+*.clab.yml.annotations.json
+*.clab.yaml.annotations.json
 *.pyc
