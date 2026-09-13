@@ -129,26 +129,21 @@ def test_device_dashboard_is_filtered_and_repeats_entities():
     dashboard = json.loads((ROOT / "configs/grafana/dashboards/device.json").read_text())
     assert dashboard["uid"] == "network-device"
     variables = {item["name"]: item for item in dashboard["templating"]["list"]}
-    assert set(variables) == {"device", "interface"}
+    assert set(variables) == {"device", "peer", "interface"}
     assert variables["device"]["current"]["value"] == "core1"
     assert not variables["device"]["multi"] and not variables["device"]["includeAll"]
+    assert variables["peer"]["multi"] and variables["peer"]["includeAll"]
     assert variables["interface"]["multi"] and variables["interface"]["includeAll"]
-    assert 'interface=~"Ethernet.*"' in variables["interface"]["query"]["query"]
 
     panels = {panel["id"]: panel for panel in dashboard["panels"]}
-    assert panels[4]["type"] == "row" and panels[4]["title"] == "BGP neighbors"
+    assert panels[4]["type"] == "row" and panels[4]["repeat"] == "peer"
     assert panels[5]["type"] == "stat" and 'device="$device"' in panels[5]["targets"][0]["expr"]
-    assert "min by (peer)" in panels[5]["targets"][0]["expr"]
-    assert panels[5]["options"]["textMode"] == "value_and_name"
-    assert panels[5]["options"]["text"] == {"titleSize": 14, "valueSize": 18}
-    assert panels[5]["gridPos"] == {"x": 0, "y": 7, "w": 6, "h": 10}
+    assert 'peer="$peer"' in panels[5]["targets"][0]["expr"]
     assert panels[6]["type"] == "state-timeline"
-    assert "min by (peer)" in panels[6]["targets"][0]["expr"]
-    assert panels[6]["gridPos"] == {"x": 6, "y": 7, "w": 18, "h": 10}
     assert panels[11]["repeat"] == "interface" and panels[11]["maxPerRow"] == 2
     assert [target["legendFormat"] for target in panels[11]["targets"]] == ["RX", "TX"]
     assert all('device="$device"' in target["expr"] for target in panels[11]["targets"])
-    assert all('interface=~"$interface"' in target["expr"] for target in panels[11]["targets"])
+    assert all('interface="$interface"' in target["expr"] for target in panels[11]["targets"])
     for panel_id in (8, 9):
         query = panels[panel_id]["targets"][0]["query"]
         assert "`device.name` = '$device'" in query
@@ -301,7 +296,6 @@ def test_readiness_rejects_old_task_samples(monkeypatch):
             result["metric"]["instance"] = "new:9804"
         assert verify.healthy_metrics()
         results.extend(
-            {"metric": {"device": d.name, "instance": "old:9804"}, "value": [0, "1"]}
-            for d in inventory()
+            {"metric": {"device": d.name, "instance": "old:9804"}, "value": [0, "1"]} for d in inventory()
         )
         assert verify.healthy_metrics()

@@ -131,7 +131,7 @@
     },
     {
       "id": 4,
-      "title": "BGP neighbors",
+      "title": "BGP neighbor \u00b7 $peer",
       "type": "row",
       "collapsed": false,
       "panels": [],
@@ -140,11 +140,12 @@
         "y": 6,
         "w": 24,
         "h": 1
-      }
+      },
+      "repeat": "peer"
     },
     {
       "id": 5,
-      "title": "Peer / Current state",
+      "title": "Current state \u00b7 $peer",
       "type": "stat",
       "datasource": {
         "type": "prometheus",
@@ -154,13 +155,13 @@
         "x": 0,
         "y": 7,
         "w": 6,
-        "h": 10
+        "h": 7
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "min by (peer) (network_bgp_session_up{device=\"$device\"})",
-          "legendFormat": "{{peer}}",
+          "expr": "min(network_bgp_session_up{device=\"$device\",peer=\"$peer\"})",
+          "legendFormat": "{{device}} {{interface}} {{peer}}",
           "instant": true,
           "range": false,
           "format": "time_series"
@@ -197,29 +198,12 @@
         "legend": {
           "displayMode": "table",
           "placement": "bottom"
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "textMode": "value_and_name",
-        "text": {
-          "titleSize": 14,
-          "valueSize": 18
-        },
-        "wideLayout": true,
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
         }
       }
     },
     {
       "id": 6,
-      "title": "State history",
+      "title": "State history \u00b7 $peer",
       "type": "state-timeline",
       "datasource": {
         "type": "prometheus",
@@ -229,13 +213,13 @@
         "x": 6,
         "y": 7,
         "w": 18,
-        "h": 10
+        "h": 7
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "min by (peer) (network_bgp_session_up{device=\"$device\"})",
-          "legendFormat": "{{peer}}",
+          "expr": "min by (peer) (network_bgp_session_up{device=\"$device\",peer=\"$peer\"})",
+          "legendFormat": "{{device}} {{interface}} {{peer}}",
           "instant": false,
           "range": true,
           "format": "time_series"
@@ -283,7 +267,7 @@
       "panels": [],
       "gridPos": {
         "x": 0,
-        "y": 17,
+        "y": 14,
         "w": 24,
         "h": 1
       }
@@ -298,7 +282,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 18,
+        "y": 15,
         "w": 24,
         "h": 9
       },
@@ -334,7 +318,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 27,
+        "y": 24,
         "w": 24,
         "h": 9
       },
@@ -368,7 +352,7 @@
       "panels": [],
       "gridPos": {
         "x": 0,
-        "y": 36,
+        "y": 33,
         "w": 24,
         "h": 1
       }
@@ -383,14 +367,14 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 37,
+        "y": 34,
         "w": 12,
         "h": 7
       },
       "targets": [
         {
           "refId": "A",
-          "expr": "max(rate(network_interface_in_octets_total{device=\"$device\",interface=~\"$interface\"}[1m])) * 8",
+          "expr": "max(rate(network_interface_in_octets_total{device=\"$device\",interface=\"$interface\"}[1m])) * 8",
           "legendFormat": "RX",
           "instant": false,
           "range": true,
@@ -398,7 +382,7 @@
         },
         {
           "refId": "B",
-          "expr": "max(rate(network_interface_out_octets_total{device=\"$device\",interface=~\"$interface\"}[1m])) * 8",
+          "expr": "max(rate(network_interface_out_octets_total{device=\"$device\",interface=\"$interface\"}[1m])) * 8",
           "legendFormat": "TX",
           "instant": false,
           "range": true,
@@ -454,6 +438,31 @@
         "options": []
       },
       {
+        "name": "peer",
+        "label": "Peer",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(network_bgp_session_up{device=\"$device\"}, peer)",
+        "query": {
+          "query": "label_values(network_bgp_session_up{device=\"$device\"}, peer)",
+          "refId": "variable-peer"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "hide": 2,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "options": []
+      },
+      {
         "name": "interface",
         "label": "Interface",
         "type": "query",
@@ -461,9 +470,9 @@
           "type": "prometheus",
           "uid": "prometheus"
         },
-        "definition": "label_values(network_interface_in_octets_total{device=\"$device\",interface=~\"Ethernet.*\"}, interface)",
+        "definition": "label_values(network_interface_in_octets_total{device=\"$device\"}, interface)",
         "query": {
-          "query": "label_values(network_interface_in_octets_total{device=\"$device\",interface=~\"Ethernet.*\"}, interface)",
+          "query": "label_values(network_interface_in_octets_total{device=\"$device\"}, interface)",
           "refId": "variable-interface"
         },
         "refresh": 1,
