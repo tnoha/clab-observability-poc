@@ -50,9 +50,7 @@ Use evidence from the failing layer rather than guessing:
   state. It contacts the live lab and loads local credentials.
 - `uv run --frozen python scripts/compare_status.py` explains CLI/gNMI entity differences,
   freshness, drops, and collector errors without changing router state.
-- `uv run --frozen python scripts/check_dashboard.py` checks Grafana datasource health and runs
-  the provisioned OpenSearch queries. Add `--reload` only when provisioning changes should be
-  applied to the running Grafana instance.
+- `uv run --frozen python scripts/check_dashboard.py` checks Grafana datasource health and runs the provisioned OpenSearch queries, but it calls `prepare.py` and may create local state. Add `--reload` only when provisioning changes should be applied to the running Grafana instance.
 - Use targeted Docker logs only for the relevant `clab-obs-*` or Floci task container. Avoid
   printing environment variables or credentials.
 - Check `runtime/evidence/verify.json` and `runtime/evidence/fault-test.json` only as records of
