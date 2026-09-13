@@ -75,7 +75,7 @@ prom(
     instant=True,
 )
 prom(
-    "BGP sessions · established / expected 16",
+    "BGP sessions · established / expected 28",
     "sum(network_bgp_session_up)",
     8,
     0,
@@ -85,7 +85,7 @@ prom(
     instant=True,
 )
 PANELS[-1]["fieldConfig"]["defaults"].pop("mappings", None)
-PANELS[-1]["fieldConfig"]["defaults"]["max"] = 16
+PANELS[-1]["fieldConfig"]["defaults"]["max"] = 28
 prom(
     "Last observation · age in seconds",
     "time() - collector_last_observed_timestamp_seconds",
@@ -118,17 +118,32 @@ prom(
     "state-timeline",
 )
 prom(
+    "External received prefixes · peer waves",
+    'max by (device, peer) (network_bgp_prefixes_received{device=~"edge1|edge2",peer=~"10\\.0\\.0\\..+"})',
+    0,
+    14,
+    24,
+    8,
+)
+PANELS[-1]["targets"][0]["legendFormat"] = "{{device}} {{peer}}"
+PANELS[-1]["options"]["legend"] = {
+    "displayMode": "table",
+    "placement": "right",
+    "calcs": ["lastNotNull"],
+    "showLegend": True,
+}
+prom(
     "Interface ingress",
     'max by (device, interface) (rate(network_interface_in_octets_total{interface=~"Ethernet.*"}[1m])) * 8',
     0,
-    14,
+    22,
     unit="bps",
 )
 prom(
     "Interface egress",
     'max by (device, interface) (rate(network_interface_out_octets_total{interface=~"Ethernet.*"}[1m])) * 8',
     12,
-    14,
+    22,
     unit="bps",
 )
 base = "source = `observations-*` | sort - collected_at | dedup entity_key, `source.transport` "
@@ -137,17 +152,17 @@ ppl(
     base
     + '| where observation_type = "bgp_neighbor" | fields `device.name`, `data.peer`, `source.transport`, `data.session_state`, `data.remote_as`, collected_at, deleted',
     0,
-    21,
+    29,
 )
 ppl(
     "Interfaces · latest CLI and gNMI observations",
     base
     + '| where observation_type = "interface" | fields `device.name`, `data.interface`, `source.transport`, `data.admin_state`, `data.oper_state`, collected_at, deleted',
     0,
-    30,
+    38,
 )
-prom("Collector errors", "collector_errors_total", 0, 39)
-prom("Observations dropped before persistence", "collector_dropped_observations_total", 12, 39)
+prom("Collector errors", "collector_errors_total", 0, 47)
+prom("Observations dropped before persistence", "collector_dropped_observations_total", 12, 47)
 Path("configs/grafana/dashboards/network.json").write_text(
     json.dumps(
         {
@@ -323,7 +338,7 @@ variables = [
     variable(
         "device",
         "label_values(collector_connected, device)",
-        current={"selected": True, "text": "core1", "value": "core1"},
+        current={"selected": True, "text": "edge1", "value": "edge1"},
     ),
     variable(
         "peer",

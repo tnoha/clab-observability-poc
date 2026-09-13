@@ -11,6 +11,8 @@ import requests
 from prepare import prepare, ROOT
 from observability import ecs
 
+EXTERNAL_IMAGE = "clab-observability-gobgp-injector:4.5.0"
+
 
 def command(*args, capture=False):
     return subprocess.run(args, check=True, text=True, capture_output=capture)
@@ -55,6 +57,7 @@ def up():
     prepare()
     doctor()
     command("docker", "image", "inspect", ecs.IMAGE, "--format", "{{.Id}}")
+    command("docker", "image", "inspect", EXTERNAL_IMAGE, "--format", "{{.Id}}")
     # Existing topology is left intact; bootstrap below is repeatable.
     names = command(
         "docker", "ps", "--filter", "name=clab-obs-", "--format", "{{.Names}}", capture=True
@@ -92,7 +95,7 @@ def up():
     ecs.write_discovery(ecs.client(), ROOT / "runtime/discovery/gnmi.json")
     from verify import healthy_metrics
 
-    wait_for("all six gNMI streams synchronized", healthy_metrics)
+    wait_for("all four gNMI streams synchronized", healthy_metrics)
     print("Grafana: http://localhost:3000 (credentials: .env)", flush=True)
     print("OpenSearch Dashboards: http://localhost:5601", flush=True)
 
@@ -124,6 +127,7 @@ def main():
         prepare()
         command("docker", "build", "-t", ecs.IMAGE, ".")
         command("docker", "build", "-t", "clab-observability-grafana:0.1.0", "configs/grafana")
+        command("docker", "build", "-t", EXTERNAL_IMAGE, "external")
     elif args.action == "up":
         up()
     elif args.action == "collect-cli":

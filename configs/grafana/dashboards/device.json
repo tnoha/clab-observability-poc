@@ -508,8 +508,8 @@
         "includeAll": false,
         "current": {
           "selected": true,
-          "text": "core1",
-          "value": "core1"
+          "text": "edge1",
+          "value": "edge1"
         },
         "options": []
       },

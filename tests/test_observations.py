@@ -180,7 +180,7 @@ def test_device_dashboard_is_filtered_and_repeats_entities():
     assert dashboard["uid"] == "network-device"
     variables = {item["name"]: item for item in dashboard["templating"]["list"]}
     assert set(variables) == {"device", "peer", "interface"}
-    assert variables["device"]["current"]["value"] == "core1"
+    assert variables["device"]["current"]["value"] == "edge1"
     assert not variables["device"]["multi"] and not variables["device"]["includeAll"]
     assert variables["interface"]["multi"] and variables["interface"]["includeAll"]
     assert variables["peer"]["multi"] and variables["peer"]["includeAll"]
@@ -211,6 +211,18 @@ def test_device_dashboard_is_filtered_and_repeats_entities():
         query = panels[panel_id]["targets"][0]["query"]
         assert "`device.name` = '$device'" in query
         assert query.index("where") < query.index("sort") < query.index("dedup")
+
+
+def test_network_dashboard_has_external_prefix_waves_and_updated_counts():
+    dashboard = json.loads((ROOT / "configs/grafana/dashboards/network.json").read_text())
+    panels = {panel["title"]: panel for panel in dashboard["panels"]}
+    sessions = panels["BGP sessions · established / expected 28"]
+    assert sessions["fieldConfig"]["defaults"]["max"] == 28
+    waves = panels["External received prefixes · peer waves"]
+    expression = waves["targets"][0]["expr"]
+    assert 'device=~"edge1|edge2"' in expression
+    assert 'peer=~"10\\.0\\.0\\..+"' in expression
+    assert waves["options"]["legend"]["calcs"] == ["lastNotNull"]
 
 
 def test_one_failed_device_does_not_cancel_others():
@@ -362,3 +374,4 @@ def test_readiness_rejects_old_task_samples(monkeypatch):
             {"metric": {"device": d.name, "instance": "old:9804"}, "value": [0, "1"]} for d in inventory()
         )
         assert verify.healthy_metrics()
+        assert len(verify.current_query("network_bgp_session_up")) == len(inventory())

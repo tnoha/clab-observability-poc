@@ -8,7 +8,12 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           version: '0.8.13'
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.24.5'
       - run: uv sync --python 3.12 --frozen
       - run: uv run ruff check src scripts tests
       - run: uv run ruff format --check src scripts tests
       - run: uv run pytest -q
+      - run: go test ./...
+        working-directory: external
