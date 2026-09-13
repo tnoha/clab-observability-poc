@@ -9,6 +9,7 @@
 | CLI/gNMI | 44 entityを両経路で保存。BGP・取得可能なIF状態が一致 |
 | Prometheus | 6台同期、BGP 16、Ethernet 14、IFカウンター取得 |
 | Grafana | 両データソースのhealth成功、両OpenSearchテーブルの実クエリ成功、画面表示確認 |
+| OpenSearch Dashboards | API statusがgreen、Discover用の`observations-*` index patternを自動作成 |
 | eBGP停止の反映 | 14.26秒（60秒以内） |
 | eBGP復旧の反映 | 16.02秒（60秒以内） |
 | 内部リンク断 | 状態変化を検出し、冗長経路で相互疎通成功 |

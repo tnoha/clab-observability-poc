@@ -20,6 +20,7 @@ flowchart LR
   CL[Containerlab] --> NOS[cEOS ×6]
   CL --> F[Floci]
   CL --> OS[OpenSearch]
+  CL --> OSD[OpenSearch Dashboards]
   CL --> P[Prometheus]
   CL --> G[Grafana]
   CL --> D[ECS discovery helper]
@@ -31,6 +32,7 @@ flowchart LR
   GNMI -->|Common Observation| OS
   GNMI -->|metrics| P
   D -->|DescribeTasks / file discovery| P
+  OS --> OSD
   OS --> G
   P --> G
 ```
@@ -53,11 +55,14 @@ make verify
 `make build`が`.env`にランダムなラボ用パスワードを生成します。Grafana/SSH/gNMIの認証情報はこのファイルの`LAB_USERNAME`/`LAB_PASSWORD`です。`.env`、startup-config、観測データはGit管理対象外です。
 
 - Grafana: [ISP Network Observability](http://localhost:3000/d/network-poc)
+- OpenSearch Dashboards: [Discover / Dev Tools](http://localhost:5601)
 - Prometheus: [Prometheus UI](http://localhost:9090)
 - OpenSearch: localhost:9200
 - Floci AWS API: localhost:4566（ダミーAWSキー`test`、region `us-east-1`）
 
-ホストへの公開はlocalhostのみです。OpenSearchの認証とgNMIのTLS、SSHホスト鍵の厳密検証は、この隔離されたラボでは無効です。FlociはローカルDocker socketを使用します。OpenSearchのmmapを無効にしており、ホストの`vm.max_map_count`変更は不要です。
+ホストへの公開はlocalhostのみです。OpenSearchとOpenSearch Dashboardsの認証、gNMIのTLS、SSHホスト鍵の厳密検証は、この隔離されたラボでは無効です。FlociはローカルDocker socketを使用します。OpenSearchのmmapを無効にしており、ホストの`vm.max_map_count`変更は不要です。
+
+OpenSearch Dashboardsには`observations-*`（time fieldは`collected_at`）のindex patternを`make up`時に自動作成します。左メニューの **Discover** で装置名、観測種別、`source.transport`などを絞り込めます。JSONクエリを直接試す場合は **Dev Tools** を使用します。Dashboardsのsaved objectはOpenSearch内に保存されるため、通常の`make down`/`make up`では保持され、`make clean`で観測履歴とともに削除されます。
 
 `make up`は基盤起動後、OpenSearchのテンプレート、ECSのタスク定義、gNMI Serviceを設定します。CLIは**手動実行**です。GrafanaのCLI表示が古い場合は再度`make collect-cli`を実行してください。6台のgNMI同期が成立しなければupは失敗します。
 
@@ -80,7 +85,7 @@ Schemaの詳細と実測上の制約は[設計メモ](docs/design.md)を参照�
 
 ```bash
 make test        # 実EOSのfixtureを使うユニットテスト。ラボ不要
-make verify      # 実機・ECS・保存先・Grafanaの正常系を検証
+make verify      # 実機・ECS・保存先・Grafana・OpenSearch Dashboardsの正常系を検証
 make fault-test  # リンク停止、復旧、gNMI切断、ECS Task再作成を実際に行う
 uv run python scripts/check_cli_failure.py # 1台のSSH接続失敗と他5台の収集継続
 make down        # ECSを先に停止し、Containerlabを破棄。観測履歴は保持

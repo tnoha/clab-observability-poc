@@ -25,7 +25,11 @@ def query(expression):
 
 def healthy_metrics():
     targets = {target for group in ecs.discover(ecs.client()) for target in group["targets"]}
-    results = query("collector_connected")
+    results = [
+        result
+        for result in query("collector_connected")
+        if result["metric"].get("instance") in targets
+    ]
     return (
         len(targets) == 1
         and len(results) == 6
@@ -151,6 +155,17 @@ def verify():
         r = requests.get(f"http://127.0.0.1:3000/api/datasources/uid/{uid}/health", auth=auth, timeout=15)
         r.raise_for_status()
         assert r.json()["status"] == "OK", r.text
+    r = requests.get("http://127.0.0.1:5601/api/status", timeout=15)
+    r.raise_for_status()
+    assert r.json()["status"]["overall"]["state"] == "green", r.text
+    r = requests.get(
+        "http://127.0.0.1:5601/api/saved_objects/index-pattern/observations", timeout=15
+    )
+    r.raise_for_status()
+    assert r.json()["attributes"] == {
+        "title": "observations-*",
+        "timeFieldName": "collected_at",
+    }, r.text
     r = requests.get("http://127.0.0.1:3000/api/dashboards/uid/network-poc", auth=auth, timeout=10)
     r.raise_for_status()
     from check_dashboard import check_dashboard
@@ -166,9 +181,14 @@ def verify():
             "cli_task": arn,
             "state_agreement": True,
             "grafana_datasources": "OK",
+            "opensearch_dashboards": "green",
+            "opensearch_dashboards_index_pattern": "observations-*",
         },
     )
-    print("PASS: networking, actual ECS CLI/gNMI tasks, observations, Prometheus and Grafana")
+    print(
+        "PASS: networking, actual ECS CLI/gNMI tasks, observations, Prometheus, "
+        "Grafana and OpenSearch Dashboards"
+    )
 
 
 def configure(device, commands):

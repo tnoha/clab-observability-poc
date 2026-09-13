@@ -62,10 +62,19 @@ def up():
     if not names:
         command("containerlab", "deploy", "-t", "lab/observability.clab.yml")
     wait_for("OpenSearch", lambda: http_ok("http://127.0.0.1:9200/_cluster/health"))
+    wait_for("OpenSearch Dashboards", lambda: http_ok("http://127.0.0.1:5601/api/status"))
     wait_for("Grafana", lambda: http_ok("http://127.0.0.1:3000/api/health"))
     from observability.repository import Repository
 
     Repository("http://127.0.0.1:9200").initialize()
+    response = requests.post(
+        "http://127.0.0.1:5601/api/saved_objects/index-pattern/observations",
+        params={"overwrite": "true"},
+        headers={"osd-xsrf": "true"},
+        json={"attributes": {"title": "observations-*", "timeFieldName": "collected_at"}},
+        timeout=10,
+    )
+    response.raise_for_status()
     # Grafana's two PPL tables compile date filters on each 10-second refresh.
     # Keep a bounded limit sized for this dashboard and acceptance queries.
     response = requests.put(
@@ -85,6 +94,7 @@ def up():
 
     wait_for("all six gNMI streams synchronized", healthy_metrics)
     print("Grafana: http://localhost:3000 (credentials: .env)", flush=True)
+    print("OpenSearch Dashboards: http://localhost:5601", flush=True)
 
 
 def down():

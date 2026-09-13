@@ -260,3 +260,8 @@ def test_readiness_rejects_old_task_samples(monkeypatch):
         for result in results:
             result["metric"]["instance"] = "new:9804"
         assert verify.healthy_metrics()
+        results.extend(
+            {"metric": {"device": d.name, "instance": "old:9804"}, "value": [0, "1"]}
+            for d in inventory()
+        )
+        assert verify.healthy_metrics()

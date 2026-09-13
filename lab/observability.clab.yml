@@ -61,6 +61,15 @@ topology:
         node.store.allow_mmap: 'false'
       binds:
       - ../runtime/opensearch:/usr/share/opensearch/data
+    opensearch-dashboards:
+      kind: linux
+      image: opensearchproject/opensearch-dashboards:2.19.3
+      mgmt-ipv4: 172.31.100.25
+      ports:
+      - 127.0.0.1:5601:5601
+      env:
+        OPENSEARCH_HOSTS: '["http://172.31.100.21:9200"]'
+        DISABLE_SECURITY_DASHBOARDS_PLUGIN: 'true'
     prometheus:
       kind: linux
       image: prom/prometheus:v3.5.0
