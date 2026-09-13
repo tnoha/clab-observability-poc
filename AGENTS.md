@@ -41,7 +41,7 @@ When changing collection, normalization, storage, or metrics, preserve these rul
 requested change explicitly revises the contract:
 
 - SSH and gNMI use the same entity identity; transport is provenance, not identity.
-- Missing or unsupported values remain `null`; do not infer zero, `down`, or another state.
+- Missing values remain `null`; do not infer zero, `down`, or another state.
 - Deletions remain historical `deleted=true` observations and disappear from live metrics.
 - gNMI partial updates retain independently known fields and are ordered per leaf.
 - Stale updates cannot resurrect deleted entities.
