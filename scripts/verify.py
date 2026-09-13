@@ -26,9 +26,7 @@ def query(expression):
 def healthy_metrics():
     targets = {target for group in ecs.discover(ecs.client()) for target in group["targets"]}
     results = [
-        result
-        for result in query("collector_connected")
-        if result["metric"].get("instance") in targets
+        result for result in query("collector_connected") if result["metric"].get("instance") in targets
     ]
     return (
         len(targets) == 1
@@ -158,9 +156,7 @@ def verify():
     r = requests.get("http://127.0.0.1:5601/api/status", timeout=15)
     r.raise_for_status()
     assert r.json()["status"]["overall"]["state"] == "green", r.text
-    r = requests.get(
-        "http://127.0.0.1:5601/api/saved_objects/index-pattern/observations", timeout=15
-    )
+    r = requests.get("http://127.0.0.1:5601/api/saved_objects/index-pattern/observations", timeout=15)
     r.raise_for_status()
     assert r.json()["attributes"] == {
         "title": "observations-*",
