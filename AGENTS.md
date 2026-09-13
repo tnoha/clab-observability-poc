@@ -2,10 +2,10 @@
 
 ## Purpose and boundaries
 
-This repository is a local Containerlab observability proof of concept. It models a six-node
-Arista cEOS network, collects state through SSH/CLI and gNMI STREAM, normalizes both paths into
-one Observation schema, stores history in OpenSearch, exposes current state to Prometheus, and
-visualizes the data in Grafana.
+This repository is a local Containerlab observability proof of concept. It models four managed
+Arista cEOS nodes plus sixteen unmonitored Linux GoBGP external route injectors. State is collected
+from the four cEOS nodes through SSH/CLI and gNMI STREAM, normalized into one Observation schema,
+stored as history in OpenSearch, exposed as current state to Prometheus, and visualized in Grafana.
 
 Floci emulates the ECS control plane while using the host Docker daemon. Do not present results
 from this repository as validation of real AWS Fargate isolation, VPC networking, IAM,

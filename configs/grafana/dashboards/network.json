@@ -76,7 +76,7 @@
     },
     {
       "id": 2,
-      "title": "BGP sessions \u00b7 established / expected 16",
+      "title": "BGP sessions \u00b7 established / expected 28",
       "type": "stat",
       "datasource": {
         "type": "prometheus",
@@ -106,7 +106,7 @@
             "fillOpacity": 12
           },
           "min": 0,
-          "max": 16
+          "max": 28
         },
         "overrides": []
       },
@@ -277,7 +277,7 @@
     },
     {
       "id": 6,
-      "title": "Interface ingress",
+      "title": "External received prefixes \u00b7 peer waves",
       "type": "timeseries",
       "datasource": {
         "type": "prometheus",
@@ -286,6 +286,51 @@
       "gridPos": {
         "x": 0,
         "y": 14,
+        "w": 24,
+        "h": 8
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (device, peer) (network_bgp_prefixes_received{device=~\"edge1|edge2\",peer=~\"10\\.0\\.0\\..+\"})",
+          "legendFormat": "{{device}} {{peer}}",
+          "instant": false,
+          "range": true,
+          "format": "time_series"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 12
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "calcs": [
+            "lastNotNull"
+          ],
+          "showLegend": true
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Interface ingress",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 22,
         "w": 12,
         "h": 7
       },
@@ -317,7 +362,7 @@
       }
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Interface egress",
       "type": "timeseries",
       "datasource": {
@@ -326,7 +371,7 @@
       },
       "gridPos": {
         "x": 12,
-        "y": 14,
+        "y": 22,
         "w": 12,
         "h": 7
       },
@@ -358,7 +403,7 @@
       }
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "BGP \u00b7 latest CLI and gNMI observations",
       "type": "table",
       "datasource": {
@@ -367,7 +412,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 21,
+        "y": 29,
         "w": 24,
         "h": 9
       },
@@ -394,7 +439,7 @@
       }
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Interfaces \u00b7 latest CLI and gNMI observations",
       "type": "table",
       "datasource": {
@@ -403,7 +448,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 30,
+        "y": 38,
         "w": 24,
         "h": 9
       },
@@ -430,7 +475,7 @@
       }
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Collector errors",
       "type": "timeseries",
       "datasource": {
@@ -439,7 +484,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 39,
+        "y": 47,
         "w": 12,
         "h": 7
       },
@@ -471,7 +516,7 @@
       }
     },
     {
-      "id": 11,
+      "id": 12,
       "title": "Observations dropped before persistence",
       "type": "timeseries",
       "datasource": {
@@ -480,7 +525,7 @@
       },
       "gridPos": {
         "x": 12,
-        "y": 39,
+        "y": 47,
         "w": 12,
         "h": 7
       },

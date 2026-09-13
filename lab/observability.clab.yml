@@ -26,15 +26,293 @@ topology:
       mgmt-ipv4: 172.31.100.14
       startup-config: ../runtime/ceos/edge2.cfg
     external1:
-      kind: arista_ceos
-      image: ceos:4.34.0F
-      mgmt-ipv4: 172.31.100.15
-      startup-config: ../runtime/ceos/external1.cfg
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.31
+      exec:
+      - ip address add 10.0.0.11/31 dev eth1
+      env:
+        LOCAL_AS: '65101'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.1
+        LOCAL_ADDRESS: 10.0.0.11/31
+        PEER_ADDRESS: 10.0.0.10
+        PREFIX_POOL: 198.18.0.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '0'
     external2:
-      kind: arista_ceos
-      image: ceos:4.34.0F
-      mgmt-ipv4: 172.31.100.16
-      startup-config: ../runtime/ceos/external2.cfg
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.32
+      exec:
+      - ip address add 10.0.0.13/31 dev eth1
+      env:
+        LOCAL_AS: '65102'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.2
+        LOCAL_ADDRESS: 10.0.0.13/31
+        PEER_ADDRESS: 10.0.0.12
+        PREFIX_POOL: 198.18.16.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '1'
+    external3:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.33
+      exec:
+      - ip address add 10.0.0.15/31 dev eth1
+      env:
+        LOCAL_AS: '65103'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.3
+        LOCAL_ADDRESS: 10.0.0.15/31
+        PEER_ADDRESS: 10.0.0.14
+        PREFIX_POOL: 198.18.32.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '2'
+    external4:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.34
+      exec:
+      - ip address add 10.0.0.17/31 dev eth1
+      env:
+        LOCAL_AS: '65104'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.4
+        LOCAL_ADDRESS: 10.0.0.17/31
+        PEER_ADDRESS: 10.0.0.16
+        PREFIX_POOL: 198.18.48.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '3'
+    external5:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.35
+      exec:
+      - ip address add 10.0.0.19/31 dev eth1
+      env:
+        LOCAL_AS: '65105'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.5
+        LOCAL_ADDRESS: 10.0.0.19/31
+        PEER_ADDRESS: 10.0.0.18
+        PREFIX_POOL: 198.18.64.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '4'
+    external6:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.36
+      exec:
+      - ip address add 10.0.0.21/31 dev eth1
+      env:
+        LOCAL_AS: '65106'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.6
+        LOCAL_ADDRESS: 10.0.0.21/31
+        PEER_ADDRESS: 10.0.0.20
+        PREFIX_POOL: 198.18.80.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '5'
+    external7:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.37
+      exec:
+      - ip address add 10.0.0.23/31 dev eth1
+      env:
+        LOCAL_AS: '65107'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.7
+        LOCAL_ADDRESS: 10.0.0.23/31
+        PEER_ADDRESS: 10.0.0.22
+        PREFIX_POOL: 198.18.96.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '6'
+    external8:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.38
+      exec:
+      - ip address add 10.0.0.25/31 dev eth1
+      env:
+        LOCAL_AS: '65108'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.8
+        LOCAL_ADDRESS: 10.0.0.25/31
+        PEER_ADDRESS: 10.0.0.24
+        PREFIX_POOL: 198.18.112.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '7'
+    external9:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.39
+      exec:
+      - ip address add 10.0.0.27/31 dev eth1
+      env:
+        LOCAL_AS: '65109'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.9
+        LOCAL_ADDRESS: 10.0.0.27/31
+        PEER_ADDRESS: 10.0.0.26
+        PREFIX_POOL: 198.18.128.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '0'
+    external10:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.40
+      exec:
+      - ip address add 10.0.0.29/31 dev eth1
+      env:
+        LOCAL_AS: '65110'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.10
+        LOCAL_ADDRESS: 10.0.0.29/31
+        PEER_ADDRESS: 10.0.0.28
+        PREFIX_POOL: 198.18.144.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '1'
+    external11:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.41
+      exec:
+      - ip address add 10.0.0.31/31 dev eth1
+      env:
+        LOCAL_AS: '65111'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.11
+        LOCAL_ADDRESS: 10.0.0.31/31
+        PEER_ADDRESS: 10.0.0.30
+        PREFIX_POOL: 198.18.160.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '2'
+    external12:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.42
+      exec:
+      - ip address add 10.0.0.33/31 dev eth1
+      env:
+        LOCAL_AS: '65112'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.12
+        LOCAL_ADDRESS: 10.0.0.33/31
+        PEER_ADDRESS: 10.0.0.32
+        PREFIX_POOL: 198.18.176.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '3'
+    external13:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.43
+      exec:
+      - ip address add 10.0.0.35/31 dev eth1
+      env:
+        LOCAL_AS: '65113'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.13
+        LOCAL_ADDRESS: 10.0.0.35/31
+        PEER_ADDRESS: 10.0.0.34
+        PREFIX_POOL: 198.18.192.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '4'
+    external14:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.44
+      exec:
+      - ip address add 10.0.0.37/31 dev eth1
+      env:
+        LOCAL_AS: '65114'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.14
+        LOCAL_ADDRESS: 10.0.0.37/31
+        PEER_ADDRESS: 10.0.0.36
+        PREFIX_POOL: 198.18.208.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '5'
+    external15:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.45
+      exec:
+      - ip address add 10.0.0.39/31 dev eth1
+      env:
+        LOCAL_AS: '65115'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.15
+        LOCAL_ADDRESS: 10.0.0.39/31
+        PEER_ADDRESS: 10.0.0.38
+        PREFIX_POOL: 198.18.224.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '6'
+    external16:
+      kind: linux
+      image: clab-observability-gobgp-injector:4.5.0
+      mgmt-ipv4: 172.31.100.46
+      exec:
+      - ip address add 10.0.0.41/31 dev eth1
+      env:
+        LOCAL_AS: '65116'
+        PEER_AS: '65000'
+        ROUTER_ID: 10.255.1.16
+        LOCAL_ADDRESS: 10.0.0.41/31
+        PEER_ADDRESS: 10.0.0.40
+        PREFIX_POOL: 198.18.240.0/20
+        BASE_PREFIXES: '1000'
+        AMPLITUDE: '300'
+        PERIOD_SECONDS: '600'
+        STEP_SECONDS: '30'
+        PHASE_SLOT: '7'
     floci:
       kind: linux
       image: floci/floci:2.0.1
@@ -124,5 +402,47 @@ topology:
     - edge1:eth3
     - external1:eth1
   - endpoints:
-    - edge2:eth3
+    - edge1:eth4
     - external2:eth1
+  - endpoints:
+    - edge1:eth5
+    - external3:eth1
+  - endpoints:
+    - edge1:eth6
+    - external4:eth1
+  - endpoints:
+    - edge1:eth7
+    - external5:eth1
+  - endpoints:
+    - edge1:eth8
+    - external6:eth1
+  - endpoints:
+    - edge1:eth9
+    - external7:eth1
+  - endpoints:
+    - edge1:eth10
+    - external8:eth1
+  - endpoints:
+    - edge2:eth3
+    - external9:eth1
+  - endpoints:
+    - edge2:eth4
+    - external10:eth1
+  - endpoints:
+    - edge2:eth5
+    - external11:eth1
+  - endpoints:
+    - edge2:eth6
+    - external12:eth1
+  - endpoints:
+    - edge2:eth7
+    - external13:eth1
+  - endpoints:
+    - edge2:eth8
+    - external14:eth1
+  - endpoints:
+    - edge2:eth9
+    - external15:eth1
+  - endpoints:
+    - edge2:eth10
+    - external16:eth1

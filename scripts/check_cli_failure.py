@@ -29,8 +29,10 @@ def check_cli_failure():
                 return False
         return True
 
-    wait_for("CLI failure leaves edge1 unchanged and still collects five real devices", other_devices_updated)
-    evidence("cli-failure", {"exit_code": 1, "other_devices_collected": 5, "failed_device": "edge1"})
+    wait_for(
+        "CLI failure leaves edge1 unchanged and still collects three real devices", other_devices_updated
+    )
+    evidence("cli-failure", {"exit_code": 1, "other_devices_collected": 3, "failed_device": "edge1"})
 
 
 if __name__ == "__main__":

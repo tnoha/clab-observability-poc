@@ -4,20 +4,21 @@ cEOSで小規模なISPバックボーンを再現し、SSH/CLIとgNMI STREAMで�
 
 ```mermaid
 flowchart LR
-  X1[external1 AS65101] --- E1[edge1 AS65000]
+  X1[external1-8<br/>GoBGP AS65101-65108] --- E1[edge1 AS65000]
   E1 --- C1[core1 AS65000]
   E1 --- C2[core2 AS65000]
   C1 --- C2
   C1 --- E2[edge2 AS65000]
   C2 --- E2
-  E2 --- X2[external2 AS65102]
+  E2 --- X2[external9-16<br/>GoBGP AS65109-65116]
 ```
 
-内部はOSPFv2＋Loopback間のfull-mesh iBGP、外部はeBGPです。external1が192.0.2.0/24、external2が198.51.100.0/24を広告します。管理ネットワークは`obs-mgmt`（172.31.100.0/24）で、データプレーンのリンク障害中も収集できます。
+内部はcEOS 4台のOSPFv2＋Loopback間full-mesh iBGP、外部は非観測の軽量GoBGP injector 16台とのeBGPです。各injectorは固有の`198.18.0.0/16`内`/20` poolから700〜1,300個の`/32`を広告し、10分周期の正弦波で30秒ごとに増減します。各edge内の8 injectorは45度ずつ位相をずらすため、peer別の変動を表示しながらedge合計は概ね8,000で安定します。管理ネットワークは`obs-mgmt`（172.31.100.0/24）です。
 
 ```mermaid
 flowchart LR
-  CL[Containerlab] --> NOS[cEOS ×6]
+  CL[Containerlab] --> NOS[cEOS ×4]
+  CL --> EXT[GoBGP injector ×16]
   CL --> F[Floci]
   CL --> OS[OpenSearch]
   CL --> OSD[OpenSearch Dashboards]
@@ -26,6 +27,7 @@ flowchart LR
   CL --> D[ECS discovery helper]
   F -->|RunTask| CLI[CLI Collector]
   F -->|Service desiredCount=1| GNMI[gNMI Collector]
+  EXT -->|dynamic BGP UPDATE/withdraw| NOS
   NOS -->|SSH show JSON| CLI
   NOS -->|SAMPLE STREAM| GNMI
   CLI -->|Common Observation| OS
@@ -41,7 +43,7 @@ flowchart LR
 
 必要環境はLinux amd64、Docker、Containerlab **0.79.0**、uv、makeです。Docker/Containerlabを実行できる権限が必要です。目安は使用可能RAM **16 GiB以上**、空きディスク **20 GiB以上**。初回は公開コンテナ・Pythonパッケージ・Grafanaプラグイン取得のインターネット接続が必要です。
 
-cEOSイメージはAristaから取得し、ローカルに`ceos:4.34.0F`としてimportしてください。イメージ自体はこのリポジトリに含みません。
+cEOSイメージはAristaから取得し、ローカルに`ceos:4.34.0F`としてimportしてください。イメージ自体はこのリポジトリに含みません。GoBGP 4.5.0のinjectorイメージは`make build`がAlpineベースで作成します。
 
 ```bash
 uv sync --python 3.12 --frozen
@@ -65,19 +67,19 @@ make verify
 
 OpenSearch Dashboardsには`observations-*`（time fieldは`collected_at`）のindex patternを`make up`時に自動作成します。左メニューの **Discover** で装置名、観測種別、`source.transport`などを絞り込めます。JSONクエリを直接試す場合は **Dev Tools** を使用します。Dashboardsのsaved objectはOpenSearch内に保存されるため、通常の`make down`/`make up`では保持され、`make clean`で観測履歴とともに削除されます。
 
-`make up`は基盤起動後、OpenSearchのテンプレート、ECSのタスク定義、gNMI Serviceを設定します。CLIは**手動実行**です。GrafanaのCLI表示が古い場合は再度`make collect-cli`を実行してください。6台のgNMI同期が成立しなければupは失敗します。
+`make up`は基盤起動後、OpenSearchのテンプレート、ECSのタスク定義、gNMI Serviceを設定します。CLIは**手動実行**です。GrafanaのCLI表示が古い場合は再度`make collect-cli`を実行してください。core/edge 4台のgNMI同期が成立しなければupは失敗します。external injectorは観測inventoryに含めません。
 
 ## 観測と保存
 
 - Python 3.12、scrapli、pyGNMI、Pydantic。Python依存関係は`uv.lock`で固定。
-- `lab/inventory.yml`が対象6台、`lab/eos-profile.yml`がEOSの取得コマンドとgNMIパス。
+- `lab/inventory.yml`が対象のcore/edge 4台、`lab/eos-profile.yml`がEOSの取得コマンドとgNMIパス。
 - CLIはSSHで`show ip bgp summary | json`と`show interfaces | json`を実行。最大2台並列、接続/コマンドにタイムアウトを設定し、失敗した装置以外の収集は継続。Task全体の制限は180秒。
 - gNMIはinterface状態、BGP neighbor状態、IPv4-unicastのreceived prefix数を10秒周期SAMPLEで購読し、Prometheusも10秒周期でscrape。機器ごとの接続を維持し、切断時にはバックオフ付きで再接続。35秒間無通信の場合はストリームを再作成。
 - 両経路は同じSchemaを使用し、`source.transport`で区別。gNMIの部分更新・削除を統合し、逆順タイムスタンプを無視。未取得値を0やdownに補完しない。
 - OpenSearchは`observations-YYYY.MM.DD`に履歴保存。gNMIの状態変化は即時、全状態のスナップショットは10秒ごとに保存し、leaf単位の通知集中による書き込み過多を避けます。Bulk失敗は最大3回試行。同じバッチ再送は同じ文書IDを使用。
 - gNMIの保存キューは最大120バッチ。保存失敗/キュー満杯は`collector_errors_total`と`collector_dropped_observations_total`に記録。永続的な再送キューではない。
 - 切断・未同期時のネットワークメトリクスは除去。最終観測時刻は保持されるため、Grafanaでは切断中も経過秒数が増加する。OpenSearch一覧は履歴なので、`collected_at`とCollector接続状態を併せて確認。
-- PrometheusにはBGP接続状態に加えて`network_bgp_prefixes_received` Gaugeを公開。Deviceダッシュボードの「Received prefixes」はpeerごとの横長グラフを動的に生成し、右側の凡例に最新値を表示する。
+- PrometheusにはBGP接続状態に加えて`network_bgp_prefixes_received` Gaugeを公開。Networkダッシュボードは16 external peerの波形を一覧表示し、Deviceダッシュボードの「Received prefixes」は選択したedgeのpeerごとの横長グラフを動的に生成する。
 - Prometheusは7日保持。OpenSearch履歴は明示的なcleanまで保持するため、長時間稼働時はディスク容量を確認。
 
 Schemaの詳細と実測上の制約は[設計メモ](docs/design.md)を参照してください。
@@ -97,7 +99,7 @@ make clean       # 停止後、runtime内の全データを明示的に削除
 
 fault-testは外部/内部リンクをshutdownし、gNMI transportを一時的に削除します。各変更は`finally`で復旧します。プロセスの強制終了やホスト停止で復旧できなかった場合は`make down && make up`でstartup-configから再作成してください。検証レポートは`runtime/evidence/`に保存されます。
 
-`make verify`は16のBGPセッションとreceived prefix系列、外部プレフィックス相互疎通、14本のEthernetエンドポイント、6台の収集、CLI/gNMIの状態一致、Grafanaデータソースを検証します。fault-testではgNMIの障害/復旧反映を60秒以内として測定します。
+`make verify`は観測対象4台の28 BGPセッション・received prefix系列、16 external peerの700〜1,300 prefixと時間変化、26本のEthernetエンドポイント、CLI/gNMIの安定フィールド一致、Grafanaデータソースを検証します。変動するprefix数は更新時刻が異なるため、CLIとgNMIを個別に範囲検証します。fault-testでは外部link、内部reroute、gNMI切断、ECS Task再作成からの復旧を検証します。
 
 構成やイメージを変更した後は`make build`、`make down`、`make up`を順に実行してください。稼働中の基盤コンテナは`make up`のみでは置換しません。`.env`を変更しても既存Grafana DBのユーザー認証は自動変更されないため、Grafana UIで更新するか、データ破棄が可能な場合に`make clean`してください。
 
