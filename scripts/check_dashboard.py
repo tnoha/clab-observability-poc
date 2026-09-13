@@ -54,9 +54,7 @@ def check_dashboard():
             if data.get("error"):
                 raise RuntimeError(f"{panel['title']}: {data['error']}")
             frames = data.get("frames", [])
-            if not any(
-                f.get("data", {}).get("values") and len(f["data"]["values"][0]) for f in frames
-            ):
+            if not any(f.get("data", {}).get("values") and len(f["data"]["values"][0]) for f in frames):
                 raise RuntimeError(f"{panel['title']}: no rows: {data}")
             print("OK Grafana query:", dashboard["title"], "·", panel["title"], flush=True)
 
