@@ -9,3 +9,4 @@ clab-*/
 *.clab.yml.annotations.json
 *.clab.yaml.annotations.json
 *.pyc
+.temp
