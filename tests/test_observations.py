@@ -80,6 +80,33 @@ def test_partial_update_and_delete():
     assert deleted.deleted and key not in cache.values
 
 
+def test_bgp_received_prefix_partial_update_delete_and_ordering():
+    cache = populated()
+    key = ("bgp_neighbor", "default", "10.0.0.11")
+    path = (
+        "network-instances/network-instance[name=default]/protocols/"
+        "protocol[identifier=BGP][name=BGP]/bgp/neighbors/"
+        "neighbor[neighbor-address=10.0.0.11]/afi-safis/"
+        "afi-safi[afi-safi-name=IPV4_UNICAST]/state/prefixes/received"
+    )
+    timestamp = int(time.time() * 1e9)
+    changed = cache.apply({"timestamp": timestamp, "update": [{"path": path, "val": 1}]})[0]
+    assert changed.data.prefixes_received == 1
+    assert changed.data.session_state == "established"
+    assert cache.apply({"timestamp": timestamp - 1_000_000_000, "update": [{"path": path, "val": 9}]}) == []
+    assert cache.make(key).data.prefixes_received == 1
+
+    changed = cache.apply({"timestamp": timestamp + 1_000_000_000, "update": [{"path": path, "val": 0}]})[0]
+    assert changed.data.prefixes_received == 0
+    changed = cache.apply({"timestamp": timestamp + 2_000_000_000, "delete": [path]})[0]
+    assert not changed.deleted
+    assert changed.data.prefixes_received is None
+    assert changed.data.session_state == "established"
+    assert cache.apply({"timestamp": timestamp + 1_000_000_000, "update": [{"path": path, "val": 5}]}) == []
+    recreated = cache.apply({"timestamp": timestamp + 3_000_000_000, "update": [{"path": path, "val": 2}]})[0]
+    assert recreated.data.prefixes_received == 2
+
+
 def test_out_of_order_updates_are_ignored():
     cache = populated()
     key = ("interface", "Ethernet3")
@@ -125,14 +152,39 @@ def test_disconnect_and_silence_remove_series():
     assert last_observed in output
 
 
+def test_bgp_received_prefix_metric_is_gauge_and_observation_driven():
+    cache = populated()
+    path = (
+        "network-instances/network-instance[name=default]/protocols/"
+        "protocol[identifier=BGP][name=BGP]/bgp/neighbors/"
+        "neighbor[neighbor-address=10.0.0.11]/afi-safis/"
+        "afi-safi[afi-safi-name=IPV4_UNICAST]/state/prefixes/received"
+    )
+    cache.apply({"timestamp": int(time.time() * 1e9), "update": [{"path": path, "val": 0}]})
+    metrics = Metrics([DEVICE.name])
+    registry = CollectorRegistry()
+    registry.register(metrics)
+    metrics.update(DEVICE.name, cache.snapshot())
+    output = generate_latest(registry)
+    assert b"# TYPE network_bgp_prefixes_received gauge" in output
+    assert (
+        b'network_bgp_prefixes_received{afi_safi="ipv4-unicast",device="edge1",'
+        b'peer="10.0.0.11",source="gnmi",vrf="default"} 0.0' in output
+    )
+    metrics.disconnected(DEVICE.name)
+    assert b"network_bgp_prefixes_received{" not in generate_latest(registry)
+
+
 def test_device_dashboard_is_filtered_and_repeats_entities():
     dashboard = json.loads((ROOT / "configs/grafana/dashboards/device.json").read_text())
     assert dashboard["uid"] == "network-device"
     variables = {item["name"]: item for item in dashboard["templating"]["list"]}
-    assert set(variables) == {"device", "interface"}
+    assert set(variables) == {"device", "peer", "interface"}
     assert variables["device"]["current"]["value"] == "core1"
     assert not variables["device"]["multi"] and not variables["device"]["includeAll"]
     assert variables["interface"]["multi"] and variables["interface"]["includeAll"]
+    assert variables["peer"]["multi"] and variables["peer"]["includeAll"]
+    assert 'device="$device"' in variables["peer"]["query"]["query"]
     assert 'interface=~"Ethernet.*"' in variables["interface"]["query"]["query"]
 
     panels = {panel["id"]: panel for panel in dashboard["panels"]}
@@ -145,11 +197,17 @@ def test_device_dashboard_is_filtered_and_repeats_entities():
     assert panels[6]["type"] == "state-timeline"
     assert "min by (peer)" in panels[6]["targets"][0]["expr"]
     assert panels[6]["gridPos"] == {"x": 6, "y": 7, "w": 18, "h": 10}
-    assert panels[11]["repeat"] == "interface" and panels[11]["maxPerRow"] == 2
-    assert [target["legendFormat"] for target in panels[11]["targets"]] == ["RX", "TX"]
-    assert all('device="$device"' in target["expr"] for target in panels[11]["targets"])
-    assert all('interface=~"$interface"' in target["expr"] for target in panels[11]["targets"])
-    for panel_id in (8, 9):
+    assert panels[7]["type"] == "row" and panels[7]["title"] == "Received prefixes"
+    assert panels[8]["repeat"] == "peer" and panels[8]["repeatDirection"] == "v"
+    assert panels[8]["gridPos"] == {"x": 0, "y": 18, "w": 24, "h": 5}
+    assert 'device="$device"' in panels[8]["targets"][0]["expr"]
+    assert 'peer=~"$peer"' in panels[8]["targets"][0]["expr"]
+    assert panels[8]["options"]["legend"]["calcs"] == ["lastNotNull"]
+    assert panels[13]["repeat"] == "interface" and panels[13]["maxPerRow"] == 2
+    assert [target["legendFormat"] for target in panels[13]["targets"]] == ["RX", "TX"]
+    assert all('device="$device"' in target["expr"] for target in panels[13]["targets"])
+    assert all('interface=~"$interface"' in target["expr"] for target in panels[13]["targets"])
+    for panel_id in (10, 11):
         query = panels[panel_id]["targets"][0]["query"]
         assert "`device.name` = '$device'" in query
         assert query.index("where") < query.index("sort") < query.index("dedup")

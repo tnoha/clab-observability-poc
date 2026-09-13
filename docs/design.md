@@ -20,11 +20,12 @@
 ```
 /interfaces/interface/state
 /network-instances/network-instance/protocols/protocol/bgp/neighbors/neighbor/state
+/network-instances/network-instance/protocols/protocol/bgp/neighbors/neighbor/afi-safis/afi-safi/state/prefixes/received
 ```
 
 JSON出力のキーにはOpenConfig名前空間が付くため、正規化時に除去します。Loopback0/1はIF名等を返す一方、admin/oper/countersを返しません。必須パスの同期検証はEthernetの状態とカウンター、BGP session-stateを対象にします。Loopbackの状態一致は検証から除外し、値を推定しません。
 
-OpenConfigのinterface MTUはこのバージョンで0を返します。意味あるMTUとして扱わずnullとします。CLIのMTUとは比較しません。BGP neighbor/stateにないlocal-asとprefix数もgNMI側で補完せずnullです。v1のAFI/SAFIは、IPv4だけを有効化した本ラボの契約に従いipv4-unicastです。Dual StackではAFI/SAFI別パスの追加が必要です。
+OpenConfigのinterface MTUはこのバージョンで0を返します。意味あるMTUとして扱わずnullとします。CLIのMTUとは比較しません。BGP neighbor/stateにないlocal-asはgNMI側で補完せずnullです。received prefix数はAFI/SAFI配下の専用パスから取得し、neighbor stateとleaf単位の時刻・実パスを保ったまま同じObservationへ統合します。v1のAFI/SAFIは、IPv4だけを有効化した本ラボの契約に従いipv4-unicastです。他AFIは受け入れず、Dual Stack対応時にentity identityを保ったAFI/SAFI別購読を追加します。
 
 cEOSの仮想カウンターは実機ASICの転送性能や全トラフィックを再現する保証がありません。PoCでは状態遷移と時系列取得経路を検証します。
 

@@ -261,29 +261,47 @@ prom(
 )
 PANELS[-1]["targets"][0]["legendFormat"] = "{{peer}}"
 
-row("Latest observations", 17)
+row("Received prefixes", 17)
+prom(
+    "peer: $peer",
+    'max by (peer) (network_bgp_prefixes_received{device="$device",peer=~"$peer"})',
+    0,
+    18,
+    24,
+    5,
+)
+PANELS[-1].update({"repeat": "peer", "repeatDirection": "v"})
+PANELS[-1]["targets"][0]["legendFormat"] = "Current received prefixes"
+PANELS[-1]["options"]["legend"] = {
+    "displayMode": "table",
+    "placement": "right",
+    "calcs": ["lastNotNull"],
+    "showLegend": True,
+}
+
+row("Latest observations", 23)
 device_base = "source = `observations-*` | where `device.name` = '$device' "
 ppl(
     "BGP · latest CLI and gNMI observations",
     device_base
     + '| where observation_type = "bgp_neighbor" | sort - collected_at | dedup entity_key, `source.transport` | fields `data.peer`, `source.transport`, `data.session_state`, `data.remote_as`, collected_at, deleted',
     0,
-    18,
+    24,
 )
 ppl(
     "Interfaces · latest CLI and gNMI observations",
     device_base
     + '| where observation_type = "interface" | sort - collected_at | dedup entity_key, `source.transport` | fields `data.interface`, `source.transport`, `data.admin_state`, `data.oper_state`, collected_at, deleted',
     0,
-    27,
+    33,
 )
 
-row("Interface traffic", 36)
+row("Interface traffic", 42)
 prom(
     "Interface traffic · $interface",
     'max(rate(network_interface_in_octets_total{device="$device",interface=~"$interface"}[1m])) * 8',
     0,
-    37,
+    43,
     12,
     7,
     unit="bps",
@@ -306,6 +324,14 @@ variables = [
         "device",
         "label_values(collector_connected, device)",
         current={"selected": True, "text": "core1", "value": "core1"},
+    ),
+    variable(
+        "peer",
+        'label_values(network_bgp_session_up{device="$device"}, peer)',
+        current={"selected": True, "text": "All", "value": "$__all"},
+        hide=2,
+        multi=True,
+        include_all=True,
     ),
     variable(
         "interface",

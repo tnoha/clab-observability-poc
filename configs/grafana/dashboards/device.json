@@ -277,7 +277,7 @@
     },
     {
       "id": 7,
-      "title": "Latest observations",
+      "title": "Received prefixes",
       "type": "row",
       "collapsed": false,
       "panels": [],
@@ -290,6 +290,66 @@
     },
     {
       "id": 8,
+      "title": "peer: $peer",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 18,
+        "w": 24,
+        "h": 5
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (peer) (network_bgp_prefixes_received{device=\"$device\",peer=~\"$peer\"})",
+          "legendFormat": "Current received prefixes",
+          "instant": false,
+          "range": true,
+          "format": "time_series"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 12
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "calcs": [
+            "lastNotNull"
+          ],
+          "showLegend": true
+        }
+      },
+      "repeat": "peer",
+      "repeatDirection": "v"
+    },
+    {
+      "id": 9,
+      "title": "Latest observations",
+      "type": "row",
+      "collapsed": false,
+      "panels": [],
+      "gridPos": {
+        "x": 0,
+        "y": 23,
+        "w": 24,
+        "h": 1
+      }
+    },
+    {
+      "id": 10,
       "title": "BGP \u00b7 latest CLI and gNMI observations",
       "type": "table",
       "datasource": {
@@ -298,7 +358,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 18,
+        "y": 24,
         "w": 24,
         "h": 9
       },
@@ -325,7 +385,7 @@
       }
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "Interfaces \u00b7 latest CLI and gNMI observations",
       "type": "table",
       "datasource": {
@@ -334,7 +394,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 27,
+        "y": 33,
         "w": 24,
         "h": 9
       },
@@ -361,20 +421,20 @@
       }
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "Interface traffic",
       "type": "row",
       "collapsed": false,
       "panels": [],
       "gridPos": {
         "x": 0,
-        "y": 36,
+        "y": 42,
         "w": 24,
         "h": 1
       }
     },
     {
-      "id": 11,
+      "id": 13,
       "title": "Interface traffic \u00b7 $interface",
       "type": "timeseries",
       "datasource": {
@@ -383,7 +443,7 @@
       },
       "gridPos": {
         "x": 0,
-        "y": 37,
+        "y": 43,
         "w": 12,
         "h": 7
       },
@@ -450,6 +510,31 @@
           "selected": true,
           "text": "core1",
           "value": "core1"
+        },
+        "options": []
+      },
+      {
+        "name": "peer",
+        "label": "Peer",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(network_bgp_session_up{device=\"$device\"}, peer)",
+        "query": {
+          "query": "label_values(network_bgp_session_up{device=\"$device\"}, peer)",
+          "refId": "variable-peer"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "hide": 2,
+        "multi": true,
+        "includeAll": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
         },
         "options": []
       },

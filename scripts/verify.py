@@ -40,10 +40,12 @@ def steady_metrics():
     if not healthy_metrics():
         return False
     states = query("network_bgp_session_up")
+    prefixes = query("network_bgp_prefixes_received")
     interfaces = query('network_interface_oper_up{interface=~"Ethernet.*"}')
     counters = query('network_interface_in_octets_total{interface=~"Ethernet.*"}')
     return (
         len(states) == 16
+        and len(prefixes) == 16
         and len(interfaces) == 14
         and len(counters) == 14
         and all(float(s["value"][1]) == 1 for s in states + interfaces)
@@ -116,7 +118,7 @@ def compare():
         if age > 35:
             return False
         if cli["observation_type"] == "bgp_neighbor":
-            fields = ("session_state", "remote_as")
+            fields = ("session_state", "remote_as", "prefixes_received")
         elif cli["data"]["interface"].startswith("Loopback"):
             continue  # EOS 4.34.0F OpenConfig omits Loopback operational state.
         else:
@@ -142,6 +144,8 @@ def verify():
     wait_for("current task has 16 BGP and 14 Ethernet metrics", steady_metrics, timeout=60)
     states = query("network_bgp_session_up")
     assert len(states) == 16 and all(float(s["value"][1]) == 1 for s in states)
+    prefixes = query("network_bgp_prefixes_received")
+    assert len(prefixes) == 16 and all(float(p["value"][1]) >= 0 for p in prefixes)
     interfaces = query('network_interface_oper_up{interface=~"Ethernet.*"}')
     assert len(interfaces) == 14 and all(float(s["value"][1]) == 1 for s in interfaces)
     drops = query("collector_dropped_observations_total")
@@ -174,6 +178,7 @@ def verify():
             "started_at": started,
             "finished_at": datetime.now(timezone.utc).isoformat(),
             "bgp_sessions": len(states),
+            "bgp_received_prefix_series": len(prefixes),
             "ethernet_interfaces": len(interfaces),
             "cli_task": arn,
             "state_agreement": True,

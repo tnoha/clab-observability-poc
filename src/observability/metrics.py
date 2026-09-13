@@ -48,6 +48,11 @@ class Metrics:
             "BGP Established",
             labels=["device", "vrf", "peer", "afi_safi", "source"],
         )
+        prefixes = GaugeMetricFamily(
+            "network_bgp_prefixes_received",
+            "BGP received prefixes",
+            labels=["device", "vrf", "peer", "afi_safi", "source"],
+        )
         oper = GaugeMetricFamily(
             "network_interface_oper_up",
             "Interface operational state",
@@ -86,12 +91,16 @@ class Metrics:
                             value = getattr(data, key)
                             if value is not None:
                                 metric.add_metric(labels, value)
-                    elif data.session_state is not None:
-                        bgp.add_metric(
-                            [device, data.vrf, data.peer, data.afi_safi, "gnmi"],
-                            int(data.session_state == "established"),
-                        )
+                    else:
+                        labels = [device, data.vrf, data.peer, data.afi_safi, "gnmi"]
+                        if data.session_state is not None:
+                            bgp.add_metric(
+                                labels,
+                                int(data.session_state == "established"),
+                            )
+                        if data.prefixes_received is not None:
+                            prefixes.add_metric(labels, data.prefixes_received)
             for reason, count in self.errors.items():
                 errors.add_metric([reason], count)
             dropped.add_metric([], self.dropped)
-        yield from [connected, last, bgp, oper, admin, *counters.values(), errors, dropped]
+        yield from [connected, last, bgp, prefixes, oper, admin, *counters.values(), errors, dropped]
