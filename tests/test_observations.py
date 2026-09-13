@@ -138,12 +138,12 @@ def test_device_dashboard_is_filtered_and_repeats_entities():
     panels = {panel["id"]: panel for panel in dashboard["panels"]}
     assert panels[4]["type"] == "row" and panels[4]["repeat"] == "peer"
     assert panels[5]["type"] == "stat" and 'device="$device"' in panels[5]["targets"][0]["expr"]
-    assert 'peer="$peer"' in panels[5]["targets"][0]["expr"]
+    assert 'peer=~"$peer"' in panels[5]["targets"][0]["expr"]
     assert panels[6]["type"] == "state-timeline"
     assert panels[11]["repeat"] == "interface" and panels[11]["maxPerRow"] == 2
     assert [target["legendFormat"] for target in panels[11]["targets"]] == ["RX", "TX"]
     assert all('device="$device"' in target["expr"] for target in panels[11]["targets"])
-    assert all('interface="$interface"' in target["expr"] for target in panels[11]["targets"])
+    assert all('interface=~"$interface"' in target["expr"] for target in panels[11]["targets"])
     for panel_id in (8, 9):
         query = panels[panel_id]["targets"][0]["query"]
         assert "`device.name` = '$device'" in query

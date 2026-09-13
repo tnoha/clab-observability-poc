@@ -160,7 +160,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "min(network_bgp_session_up{device=\"$device\",peer=\"$peer\"})",
+          "expr": "min(network_bgp_session_up{device=\"$device\",peer=~\"$peer\"})",
           "legendFormat": "{{device}} {{interface}} {{peer}}",
           "instant": true,
           "range": false,
@@ -218,7 +218,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "min by (peer) (network_bgp_session_up{device=\"$device\",peer=\"$peer\"})",
+          "expr": "min by (peer) (network_bgp_session_up{device=\"$device\",peer=~\"$peer\"})",
           "legendFormat": "{{device}} {{interface}} {{peer}}",
           "instant": false,
           "range": true,
@@ -374,7 +374,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "max(rate(network_interface_in_octets_total{device=\"$device\",interface=\"$interface\"}[1m])) * 8",
+          "expr": "max(rate(network_interface_in_octets_total{device=\"$device\",interface=~\"$interface\"}[1m])) * 8",
           "legendFormat": "RX",
           "instant": false,
           "range": true,
@@ -382,7 +382,7 @@
         },
         {
           "refId": "B",
-          "expr": "max(rate(network_interface_out_octets_total{device=\"$device\",interface=\"$interface\"}[1m])) * 8",
+          "expr": "max(rate(network_interface_out_octets_total{device=\"$device\",interface=~\"$interface\"}[1m])) * 8",
           "legendFormat": "TX",
           "instant": false,
           "range": true,

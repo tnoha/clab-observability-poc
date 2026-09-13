@@ -234,8 +234,8 @@ def variable(name, query, *, current, hide=0, multi=False, include_all=False):
 
 def device_dashboard():
     device = 'device="$device"'
-    peer = 'peer="$peer"'
-    interface = 'interface="$interface"'
+    peer = 'peer=~"$peer"'
+    interface = 'interface=~"$interface"'
     panels = [row(1, "Device health", 0)]
     panels.append(
         prom_panel(
